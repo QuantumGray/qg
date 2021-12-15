@@ -1,0 +1,6 @@
+version: "Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)"
+options: "d5e6fc72f0ce665dc84a492e3f1a5603"
+build_time: [1639069819, 415218000]
+inputs:
+  "/Users/niklasvonhaxthausen/.pub-cache/hosted/pub.dartlang.org/flutter_archive-4.1.0/macos/Classes/FlutterArchivePlugin.swift": !dirty [1635254167, 218192460]
+  "/Users/niklasvonhaxthausen/.pub-cache/hosted/pub.dartlang.org/flutter_archive-4.1.0/macos/Classes/SwiftFlutterArchivePlugin.swift": !dirty [1635254167, 217802269]

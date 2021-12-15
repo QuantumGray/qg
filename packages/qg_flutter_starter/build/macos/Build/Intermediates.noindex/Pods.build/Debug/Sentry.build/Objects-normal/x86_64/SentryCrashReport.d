@@ -1,0 +1,32 @@
+dependencies: \
+  /Users/niklasvonhaxthausen/Documents/dev/projects/QuantumGray/qg_flutter_starter/macos/Pods/Sentry/Sources/SentryCrash/Recording/SentryCrashReport.c \
+  /Users/niklasvonhaxthausen/Documents/dev/projects/QuantumGray/qg_flutter_starter/build/macos/Build/Intermediates.noindex/Pods.build/Debug/Sentry.build/module.modulemap \
+  /Users/niklasvonhaxthausen/Documents/dev/projects/QuantumGray/qg_flutter_starter/macos/Pods/Target\ Support\ Files/Sentry/Sentry-prefix.pch \
+  /Users/niklasvonhaxthausen/Documents/dev/projects/QuantumGray/qg_flutter_starter/macos/Pods/Sentry/Sources/SentryCrash/Recording/SentryCrashReport.h \
+  /Users/niklasvonhaxthausen/Documents/dev/projects/QuantumGray/qg_flutter_starter/macos/Pods/Sentry/Sources/SentryCrash/Recording/Monitors/SentryCrashMonitorContext.h \
+  /Users/niklasvonhaxthausen/Documents/dev/projects/QuantumGray/qg_flutter_starter/macos/Pods/Sentry/Sources/SentryCrash/Recording/Tools/SentryCrashMachineContext.h \
+  /Users/niklasvonhaxthausen/Documents/dev/projects/QuantumGray/qg_flutter_starter/macos/Pods/Sentry/Sources/SentryCrash/Recording/Tools/SentryCrashThread.h \
+  /Users/niklasvonhaxthausen/Documents/dev/projects/QuantumGray/qg_flutter_starter/macos/Pods/Sentry/Sources/SentryCrash/Recording/Monitors/SentryCrashMonitorType.h \
+  /Users/niklasvonhaxthausen/Documents/dev/projects/QuantumGray/qg_flutter_starter/macos/Pods/Sentry/Sources/SentryCrash/Recording/SentryCrashReportWriter.h \
+  /Users/niklasvonhaxthausen/Documents/dev/projects/QuantumGray/qg_flutter_starter/macos/Pods/Sentry/Sources/SentryCrash/Recording/Tools/SentryCrashCPU.h \
+  /Users/niklasvonhaxthausen/Documents/dev/projects/QuantumGray/qg_flutter_starter/macos/Pods/Sentry/Sources/SentryCrash/Recording/SentryCrashCachedData.h \
+  /Users/niklasvonhaxthausen/Documents/dev/projects/QuantumGray/qg_flutter_starter/macos/Pods/Sentry/Sources/SentryCrash/Recording/Tools/SentryCrashDynamicLinker.h \
+  /Users/niklasvonhaxthausen/Documents/dev/projects/QuantumGray/qg_flutter_starter/macos/Pods/Sentry/Sources/SentryCrash/Recording/Tools/SentryCrashFileUtils.h \
+  /Users/niklasvonhaxthausen/Documents/dev/projects/QuantumGray/qg_flutter_starter/macos/Pods/Sentry/Sources/SentryCrash/Recording/Tools/SentryCrashJSONCodec.h \
+  /Users/niklasvonhaxthausen/Documents/dev/projects/QuantumGray/qg_flutter_starter/macos/Pods/Sentry/Sources/SentryCrash/Recording/Tools/SentryCrashMach.h \
+  /Users/niklasvonhaxthausen/Documents/dev/projects/QuantumGray/qg_flutter_starter/macos/Pods/Sentry/Sources/SentryCrash/Recording/Tools/SentryCrashMemory.h \
+  /Users/niklasvonhaxthausen/Documents/dev/projects/QuantumGray/qg_flutter_starter/macos/Pods/Sentry/Sources/SentryCrash/Recording/Monitors/SentryCrashMonitor_Zombie.h \
+  /Users/niklasvonhaxthausen/Documents/dev/projects/QuantumGray/qg_flutter_starter/macos/Pods/Sentry/Sources/SentryCrash/Recording/Monitors/SentryCrashMonitor.h \
+  /Users/niklasvonhaxthausen/Documents/dev/projects/QuantumGray/qg_flutter_starter/macos/Pods/Sentry/Sources/SentryCrash/Recording/Tools/SentryCrashObjC.h \
+  /Users/niklasvonhaxthausen/Documents/dev/projects/QuantumGray/qg_flutter_starter/macos/Pods/Sentry/Sources/SentryCrash/Recording/SentryCrashReportFields.h \
+  /Users/niklasvonhaxthausen/Documents/dev/projects/QuantumGray/qg_flutter_starter/macos/Pods/Sentry/Sources/SentryCrash/Recording/SentryCrashReportVersion.h \
+  /Users/niklasvonhaxthausen/Documents/dev/projects/QuantumGray/qg_flutter_starter/macos/Pods/Sentry/Sources/SentryCrash/Recording/Tools/SentryCrashSignalInfo.h \
+  /Users/niklasvonhaxthausen/Documents/dev/projects/QuantumGray/qg_flutter_starter/macos/Pods/Sentry/Sources/SentryCrash/Recording/Tools/SentryCrashStackCursor_Backtrace.h \
+  /Users/niklasvonhaxthausen/Documents/dev/projects/QuantumGray/qg_flutter_starter/macos/Pods/Sentry/Sources/SentryCrash/Recording/Tools/SentryCrashStackCursor.h \
+  /Users/niklasvonhaxthausen/Documents/dev/projects/QuantumGray/qg_flutter_starter/macos/Pods/Sentry/Sources/SentryCrash/Recording/Tools/SentryHook.h \
+  /Users/niklasvonhaxthausen/Documents/dev/projects/QuantumGray/qg_flutter_starter/macos/Pods/Sentry/Sources/SentryCrash/Recording/Tools/SentryCrashStackCursor_MachineContext.h \
+  /Users/niklasvonhaxthausen/Documents/dev/projects/QuantumGray/qg_flutter_starter/macos/Pods/Sentry/Sources/SentryCrash/Recording/Tools/SentryCrashString.h \
+  /Users/niklasvonhaxthausen/Documents/dev/projects/QuantumGray/qg_flutter_starter/macos/Pods/Sentry/Sources/SentryCrash/Recording/SentryCrashSystemCapabilities.h \
+  /Users/niklasvonhaxthausen/Documents/dev/projects/QuantumGray/qg_flutter_starter/macos/Pods/Sentry/Sources/SentryCrash/Recording/Tools/SentryCrashUUIDConversion.h \
+  /Users/niklasvonhaxthausen/Documents/dev/projects/QuantumGray/qg_flutter_starter/macos/Pods/Sentry/Sources/Sentry/include/SentryScopeSyncC.h \
+  /Users/niklasvonhaxthausen/Documents/dev/projects/QuantumGray/qg_flutter_starter/macos/Pods/Sentry/Sources/SentryCrash/Recording/Tools/SentryCrashLogger.h

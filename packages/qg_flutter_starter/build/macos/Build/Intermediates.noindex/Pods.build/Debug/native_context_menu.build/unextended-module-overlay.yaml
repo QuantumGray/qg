@@ -1,0 +1,13 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [{
+    'type': 'directory',
+    'name': "/Users/niklasvonhaxthausen/Documents/dev/projects/QuantumGray/qg_flutter_starter/build/macos/Build/Products/Debug/native_context_menu/native_context_menu.framework/Modules"
+    'contents': [{
+      'type': 'file',
+      'name': "module.modulemap",
+      'external-contents': "/Users/niklasvonhaxthausen/Documents/dev/projects/QuantumGray/qg_flutter_starter/build/macos/Build/Intermediates.noindex/Pods.build/Debug/native_context_menu.build/unextended-module.modulemap",
+    }]
+  }]
+}

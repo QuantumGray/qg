@@ -1,0 +1,6 @@
+[submodule "hooks_"]
+	path = hooks
+	url = https://github.com/QuantumGray/git_hooks_flutter.git
+[submodule "vscode_"]
+	path = .vscode
+	url = https://github.com/QuantumGray/quantumgray-flutter-snippets.git

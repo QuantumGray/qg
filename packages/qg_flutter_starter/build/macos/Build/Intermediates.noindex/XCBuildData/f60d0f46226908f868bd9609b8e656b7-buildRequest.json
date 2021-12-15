@@ -1,0 +1,58 @@
+{
+  "buildCommand" : "build",
+  "configuredTargets" : [
+    {
+      "guid" : "7405afb763b99486d509d1ed638d1d02a26d6e580d3222b86d62fb80ec380c14"
+    }
+  ],
+  "continueBuildingAfterErrors" : false,
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "build",
+    "activeArchitecture" : "x86_64",
+    "activeRunDestination" : {
+      "disableOnlyActiveArch" : false,
+      "platform" : "macosx",
+      "sdk" : "macosx11.3",
+      "sdkVariant" : "macos",
+      "supportedArchitectures" : [
+        "x86_64h",
+        "x86_64"
+      ],
+      "targetArchitecture" : "x86_64"
+    },
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "/Users/niklasvonhaxthausen/Documents/dev/projects/QuantumGray/qg_flutter_starter/build/macos/Build/Intermediates.noindex",
+      "buildProductsPath" : "/Users/niklasvonhaxthausen/Documents/dev/projects/QuantumGray/qg_flutter_starter/build/macos/Build/Products",
+      "derivedDataPath" : "/Users/niklasvonhaxthausen/Documents/dev/projects/QuantumGray/qg_flutter_starter/build/macos",
+      "indexDataStoreFolderPath" : "/Users/niklasvonhaxthausen/Documents/dev/projects/QuantumGray/qg_flutter_starter/build/macos/Index/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/niklasvonhaxthausen/Documents/dev/projects/QuantumGray/qg_flutter_starter/build/macos/Index/PrecompiledHeaders",
+      "pchPath" : "/Users/niklasvonhaxthausen/Documents/dev/projects/QuantumGray/qg_flutter_starter/build/macos/Build/Intermediates.noindex/PrecompiledHeaders"
+    },
+    "configurationName" : "Debug",
+    "overrides" : {
+      "commandLine" : {
+        "table" : {
+          "COMPILER_INDEX_STORE_ENABLE" : "NO",
+          "OBJROOT" : "/Users/niklasvonhaxthausen/Documents/dev/projects/QuantumGray/qg_flutter_starter/build/macos/Build/Intermediates.noindex",
+          "SYMROOT" : "/Users/niklasvonhaxthausen/Documents/dev/projects/QuantumGray/qg_flutter_starter/build/macos/Build/Products"
+        }
+      },
+      "synthesized" : {
+        "table" : {
+          "ACTION" : "build",
+          "ENABLE_PREVIEWS" : "NO"
+        }
+      }
+    }
+  },
+  "schemeCommand" : "launch",
+  "shouldCollectMetrics" : false,
+  "showNonLoggedProgress" : true,
+  "useDryRun" : false,
+  "useImplicitDependencies" : true,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : true
+}

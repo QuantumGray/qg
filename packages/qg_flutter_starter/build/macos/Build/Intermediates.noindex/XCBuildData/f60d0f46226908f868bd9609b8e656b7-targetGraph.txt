@@ -1,0 +1,58 @@
+Target dependency graph (14 targets)
+FMDB in Pods
+Sentry in Pods
+ZIPFoundation in Pods
+FlutterMacOS in Pods
+flutter_archive in Pods, depends on:
+FlutterMacOS in Pods (explicit)
+ZIPFoundation in Pods (explicit)
+native_context_menu in Pods, depends on:
+FlutterMacOS in Pods (explicit)
+package_info_plus_macos in Pods, depends on:
+FlutterMacOS in Pods (explicit)
+path_provider_macos in Pods, depends on:
+FlutterMacOS in Pods (explicit)
+sentry_flutter in Pods, depends on:
+FlutterMacOS in Pods (explicit)
+Sentry in Pods (explicit)
+sqflite in Pods, depends on:
+FMDB in Pods (explicit)
+FlutterMacOS in Pods (explicit)
+url_launcher_macos in Pods, depends on:
+FlutterMacOS in Pods (explicit)
+Flutter Assemble in Runner, depends on:
+FMDB in Pods (implicit dependency via options '-framework FMDB' in build setting 'OTHER_LDFLAGS'
+Sentry in Pods (implicit dependency via options '-framework Sentry' in build setting 'OTHER_LDFLAGS'
+ZIPFoundation in Pods (implicit dependency via options '-framework ZIPFoundation' in build setting 'OTHER_LDFLAGS'
+flutter_archive in Pods (implicit dependency via options '-framework flutter_archive' in build setting 'OTHER_LDFLAGS'
+native_context_menu in Pods (implicit dependency via options '-framework native_context_menu' in build setting 'OTHER_LDFLAGS'
+package_info_plus_macos in Pods (implicit dependency via options '-framework package_info_plus_macos' in build setting 'OTHER_LDFLAGS'
+path_provider_macos in Pods (implicit dependency via options '-framework path_provider_macos' in build setting 'OTHER_LDFLAGS'
+sentry_flutter in Pods (implicit dependency via options '-framework sentry_flutter' in build setting 'OTHER_LDFLAGS'
+sqflite in Pods (implicit dependency via options '-framework sqflite' in build setting 'OTHER_LDFLAGS'
+url_launcher_macos in Pods (implicit dependency via options '-framework url_launcher_macos' in build setting 'OTHER_LDFLAGS'
+Pods-Runner in Pods, depends on:
+FMDB in Pods (explicit)
+FlutterMacOS in Pods (explicit)
+Sentry in Pods (explicit)
+ZIPFoundation in Pods (explicit)
+flutter_archive in Pods (explicit)
+native_context_menu in Pods (explicit)
+package_info_plus_macos in Pods (explicit)
+path_provider_macos in Pods (explicit)
+sentry_flutter in Pods (explicit)
+sqflite in Pods (explicit)
+url_launcher_macos in Pods (explicit)
+Runner in Runner, depends on:
+Flutter Assemble in Runner (explicit)
+Pods-Runner in Pods (implicit dependency via file 'Pods_Runner.framework' in build phase 'Link Binary'
+FMDB in Pods (implicit dependency via options '-framework FMDB' in build setting 'OTHER_LDFLAGS'
+Sentry in Pods (implicit dependency via options '-framework Sentry' in build setting 'OTHER_LDFLAGS'
+ZIPFoundation in Pods (implicit dependency via options '-framework ZIPFoundation' in build setting 'OTHER_LDFLAGS'
+flutter_archive in Pods (implicit dependency via options '-framework flutter_archive' in build setting 'OTHER_LDFLAGS'
+native_context_menu in Pods (implicit dependency via options '-framework native_context_menu' in build setting 'OTHER_LDFLAGS'
+package_info_plus_macos in Pods (implicit dependency via options '-framework package_info_plus_macos' in build setting 'OTHER_LDFLAGS'
+path_provider_macos in Pods (implicit dependency via options '-framework path_provider_macos' in build setting 'OTHER_LDFLAGS'
+sentry_flutter in Pods (implicit dependency via options '-framework sentry_flutter' in build setting 'OTHER_LDFLAGS'
+sqflite in Pods (implicit dependency via options '-framework sqflite' in build setting 'OTHER_LDFLAGS'
+url_launcher_macos in Pods (implicit dependency via options '-framework url_launcher_macos' in build setting 'OTHER_LDFLAGS'

@@ -1,0 +1,7 @@
+name: qg_monorepo_starter
+
+packages:
+  - packages/**
+
+scripts:
+  analyze: melos exec -- pub global run tuneup check

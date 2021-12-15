@@ -1,0 +1,12 @@
+version: "Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)"
+options: "69ff30e0656a074a071fe7759d2f4af0"
+build_time: [1639069801, 775481000]
+inputs:
+  "/Users/niklasvonhaxthausen/Documents/dev/projects/QuantumGray/qg_flutter_starter/macos/Pods/ZIPFoundation/Sources/ZIPFoundation/Archive.swift": [1639069792, 296746122]
+  "/Users/niklasvonhaxthausen/Documents/dev/projects/QuantumGray/qg_flutter_starter/macos/Pods/ZIPFoundation/Sources/ZIPFoundation/Archive+MemoryFile.swift": [1639069792, 295446627]
+  "/Users/niklasvonhaxthausen/Documents/dev/projects/QuantumGray/qg_flutter_starter/macos/Pods/ZIPFoundation/Sources/ZIPFoundation/Archive+Reading.swift": [1639069792, 297170593]
+  "/Users/niklasvonhaxthausen/Documents/dev/projects/QuantumGray/qg_flutter_starter/macos/Pods/ZIPFoundation/Sources/ZIPFoundation/Archive+Writing.swift": [1639069792, 299621882]
+  "/Users/niklasvonhaxthausen/Documents/dev/projects/QuantumGray/qg_flutter_starter/macos/Pods/ZIPFoundation/Sources/ZIPFoundation/Data+Compression.swift": [1639069792, 298782469]
+  "/Users/niklasvonhaxthausen/Documents/dev/projects/QuantumGray/qg_flutter_starter/macos/Pods/ZIPFoundation/Sources/ZIPFoundation/Data+Serialization.swift": [1639069792, 300183841]
+  "/Users/niklasvonhaxthausen/Documents/dev/projects/QuantumGray/qg_flutter_starter/macos/Pods/ZIPFoundation/Sources/ZIPFoundation/Entry.swift": [1639069792, 298104182]
+  "/Users/niklasvonhaxthausen/Documents/dev/projects/QuantumGray/qg_flutter_starter/macos/Pods/ZIPFoundation/Sources/ZIPFoundation/FileManager+ZIP.swift": [1639069792, 301068155]

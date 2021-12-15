@@ -1,0 +1,124 @@
+{
+    "Comment Header": {
+        "scope": "dart, yaml",
+        "prefix": "commenth",
+        "body": [
+            "$LINE_COMMENT ${1:HEADING}"
+        ],
+        "description": ""
+    },
+    "Hook Widget": {
+        "prefix": "hookw",
+        "body": [
+            "import 'package:flutter_hooks/flutter_hooks.dart';",
+            "import 'package:template_app/core/extensions/buildcontext_extension.dart';",
+            "",
+            "class ${1:MyHookWidget} extends HookWidget {",
+            "   Widget build(BuildContext context) {",
+            "      final AppLocalizations _localizations = context.localizations;",
+            "      final ThemeData _theme = Theme.of(context);",
+            "      return ${2:Container}();",
+            "   }",
+            "}",
+        ],
+        "description": "HookWidget with localization"
+    },
+    "Context Read": {
+        "prefix": "contextr",
+        "body": [
+            "BuildContextX(context).read(${1:providerX})"
+        ],
+        "description": "Reads provider via BuildContext"
+    },
+    "Freezed Data Class": {
+        "prefix": "freezed-data",
+        "body": [
+            "import 'package:freezed_annotation/freezed_annotation.dart';",
+            "",
+            "part '${6:file}.freezed.dart';",
+            "part '${6:file}.g.dart';",
+            "",
+            "@freezed",
+            "abstract class ${1:MyDataClass} with _$${1:MyDataClass} {",
+            "",
+            "   const ${1:MyDataClass}._();",
+            "   @JsonSerializable(explicitToJson: true)",
+            "   const factory ${1:MyDataClass}({",
+            "      @JsonKey(name: '${3:key}',) ${4:TypeParam} ${5:key},",
+            "   }) = _${1:MyDataClass};",
+            "",
+            "   factory ${1:MyDataClass}.fromJson(Map<String, dynamic> json) => _$${1:MyDataClass}FromJson(json);",
+            "   dynamic func() =>  ${5:key}.hashCode;",
+            "}",
+
+        ],
+        "description": ""
+    },
+    "Freezed Events Class": {
+        "prefix": "freezed-events",
+        "body": [
+            "import 'package:freezed_annotation/freezed_annotation.dart';",
+            "",
+            "part '${6:file}.freezed.dart';",
+            "part '${6:file}.g.dart';",
+            "",
+            "@freezed",
+            "abstract class ${1:Something}Event with _$${1:Something}Event {",
+            "",
+            "   const factory ${1:Something}.refresh() = ${1:Something}RefreshEvent;",
+            "}",
+        ],
+        "description": ""
+    },
+    "Freezed States Class": {
+        "prefix": "freezed-states",
+        "body": [
+            "import 'package:freezed_annotation/freezed_annotation.dart';",
+            "",
+            "part '${6:file}.freezed.dart';",
+            "part '${6:file}.g.dart';",
+            "",
+            "@freezed",
+            "abstract class ${1:Something}State with _$${1:Something}State {",
+            "",
+            "   const factory ${1:Something}.initial() = ${1:Something}InitialState;",
+            "   const factory ${1:Something}.loading() = ${1:Something}LoadingState;",
+            "   const factory ${1:Something}.exception() = ${1:Something}ExceptionState;",
+            "   const factory ${1:Something}.data() = ${1:Something}DataState;",
+            "}",
+        ],
+        "description": ""
+    },
+    "Freezed Bloc": {
+        "prefix": "freezed-bloc",
+        "body": [
+            "import 'package:bloc_concurrency/bloc_concurrency.dart';",
+            "import 'package:riverbloc/riverbloc.dart';",
+            "import 'package:hooks_riverpod/hooks_riverpod.dart';",
+            // "import '';",
+            "",
+            "import 'events/events.dart';",
+            "import 'states/states.dart';",
+            "",
+            "final p${1:Something}Bloc = BlocProvider.autoDispose<${1:Something}Bloc, ${1:Something}State>((ref) => ${1:Something}Bloc(ref.read));",
+            "",
+            "class ${1:Something}Bloc extends Bloc<${1:Something}Event, ${1:Something}State> {",
+            "   final Reader read;",
+            "   ${1:Something}Bloc(this.read) : super(${1:Something}State.initial()) {",
+            "   }",
+            "   @override",
+            "   void onTransition(Transition<MapEvent, MapState> transition) {",
+            "       // :)",
+            "       super.onTransition(transition);",
+            "   }",
+            "}",
+        ],
+        "description": ""
+    },
+    // COPY FOR ADDING SNIPPET
+    "CopyMe": {
+        "prefix": "",
+        "body": [],
+        "description": ""
+    },
+}

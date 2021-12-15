@@ -1,0 +1,5 @@
+version: "Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)"
+options: "3d381964dde60d65b1d8c5e59a3658ae"
+build_time: [1639069801, 771993000]
+inputs:
+  "/Users/niklasvonhaxthausen/.pub-cache/hosted/pub.dartlang.org/native_context_menu-0.2.0+3/macos/Classes/NativeContextMenuPlugin.swift": [1635847929, 997036270]

@@ -1,0 +1,25 @@
+name: qg_server_starter
+description: A server app using the shelf package and Docker.
+version: 1.0.0
+# homepage: https://www.example.com
+
+environment:
+  sdk: '>=2.16.0-85.0.dev <3.0.0'
+
+
+dependencies:
+  qg_base:
+    path: ../qg_base
+
+  args: ^2.0.0
+  shelf: ^1.1.0
+  shelf_router: ^1.0.0
+
+dev_dependencies:
+  qg_analysis:
+    path: ../qg_analysis
+
+  http: ^0.13.0
+  lints: ^1.0.0
+  test_process: ^2.0.0
+  test: ^1.15.0
