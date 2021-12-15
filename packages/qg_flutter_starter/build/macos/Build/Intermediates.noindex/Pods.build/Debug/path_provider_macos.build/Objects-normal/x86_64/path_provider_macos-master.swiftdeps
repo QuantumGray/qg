@@ -1,5 +1,0 @@
-version: "Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)"
-options: "2b389c8d26c24546020795d8f24c31bf"
-build_time: [1639069801, 706926000]
-inputs:
-  "/Users/niklasvonhaxthausen/.pub-cache/hosted/pub.dartlang.org/path_provider_macos-2.0.4/macos/Classes/PathProviderPlugin.swift": [1638805887, 212051531]

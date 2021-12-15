@@ -4,7 +4,11 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/packages/qg_analysis/melos_qg_analysis.iml" filepath="$PROJECT_DIR$/packages/qg_analysis/melos_qg_analysis.iml" />
       <module fileurl="file://$PROJECT_DIR$/packages/qg_base/melos_qg_base.iml" filepath="$PROJECT_DIR$/packages/qg_base/melos_qg_base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/packages/qg_cli/melos_qg_cli.iml" filepath="$PROJECT_DIR$/packages/qg_cli/melos_qg_cli.iml" />
       <module fileurl="file://$PROJECT_DIR$/packages/qg_flutter_base/melos_qg_flutter_base.iml" filepath="$PROJECT_DIR$/packages/qg_flutter_base/melos_qg_flutter_base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/packages/qg_flutter_starter/melos_qg_flutter_starter.iml" filepath="$PROJECT_DIR$/packages/qg_flutter_starter/melos_qg_flutter_starter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/packages/qg_server_starter_d/melos_qg_server_starter.iml" filepath="$PROJECT_DIR$/packages/qg_server_starter_d/melos_qg_server_starter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/packages/qg_server_starter/melos_qg_server_starter.iml" filepath="$PROJECT_DIR$/packages/qg_server_starter/melos_qg_server_starter.iml" />
       <module fileurl="file://$PROJECT_DIR$/melos_qg_monorepo_starter.iml" filepath="$PROJECT_DIR$/melos_qg_monorepo_starter.iml" />
     </modules>
   </component>
