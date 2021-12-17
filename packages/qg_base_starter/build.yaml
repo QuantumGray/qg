@@ -1,0 +1,57 @@
+targets:
+  $default:
+    builders:
+      freezed|freezed:
+        enabled: false
+      json_serializable|json_serializable:
+        enabled: true
+        generate_for:
+          - "lib/core/models/*"
+        options:
+          any_map: false
+          checked: false
+          constructor: ""
+          create_factory: true
+          create_to_json: true
+          disallow_unrecognized_keys: false
+          explicit_to_json: true
+          field_rename: none
+          generic_argument_factories: false
+          ignore_unannotated: false
+          include_if_null: true
+      pototype:prototype:
+        enabled: true
+
+      # FERRY
+      gql_build|schema_builder:
+        enabled: true
+      gql_build|ast_builder:
+        enabled: true
+      gql_build|data_builder:
+        enabled: true
+        options:
+          schema: qg_base_starter|lib/models/gql/schema/schema.graphql
+      gql_build|var_builder:
+        enabled: true
+        options:
+          schema: qg_base_starter|lib/models/gql/schema/schema.graphql
+      gql_build|serializer_builder:
+        enabled: true
+        options:
+          schema: qg_base_starter|lib/models/schema/schema.graphql
+      ferry_generator|req_builder:
+        enabled: true
+        options:
+          schema: qg_base_starter|lib/models/gql/schema/schema.graphql
+
+builders:
+  # Change 'prototype' with the name of your project!
+  prototype:
+    # Update path below to match the location of your builders.dart file
+    import: "lib/base/macro_builders.dart"
+    builder_factories:
+      ["typesBuilder", "declarationsBuilder", "definitionsBuilder"]
+    build_extensions:
+      { ".gen.dart": [".types.dart.", ".declarations.dart.", ".dart"] }
+    auto_apply: dependents
+    build_to: source

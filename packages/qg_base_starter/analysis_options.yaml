@@ -1,0 +1,17 @@
+include: package:qg_analysis/analysis_options.yaml
+
+linter:
+  rules:
+    public_member_api_docs: false
+
+analyzer:
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+    - "**/*.ast.gql.dart"
+    - "**/*.req.gql.dart"
+    - "**/*.data.gql.dart"
+    - "**/*.var.gql.dart"
+    - "**/*.gql.g.dart"
+  errors:
+    invalid_annotation_target: ignore

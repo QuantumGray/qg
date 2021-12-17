@@ -68,7 +68,12 @@
 
 <h2 id="prerequisites">📚 prerequisites</h2>
 
+[MELOS](https://melos.invertase.dev/getting-started)
+[TUNEUP](https://pub.dev/packages/tuneup)
+
 <h1 id="usage">💨 usage</h1>
+
+[MELOS COMMANDS](https://melos.invertase.dev/commands#global-options)
 
 <h1 id="contributing">👯‍♀️ contributing</h1>
 
