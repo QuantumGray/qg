@@ -1,0 +1,15 @@
+[submodule "qg_server_starter submmodule"]
+	path = packages/qg_server_starter
+	url = https://github.com/QuantumGray/qg_server_starter
+[submodule "qg_analysis submmodule"]
+	path = packages/qg_analysis
+	url = https://github.com/QuantumGray/qg_analysis
+[submodule "qg_base submmodule"]
+	path = packages/qg_base
+	url = https://github.com/QuantumGray/qg_base
+[submodule "qg_flutter_base submmodule"]
+	path = packages/qg_flutter_base
+	url = https://github.com/QuantumGray/qg_flutter_base
+[submodule "qg_flutter_starter submmodule"]
+	path = packages/qg_flutter_starter
+	url = https://github.com/QuantumGray/qg_flutter_starter
