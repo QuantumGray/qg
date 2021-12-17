@@ -13,9 +13,9 @@ jobs:
       with:
         persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
         fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
+        submodules: recursive
     - name: Create local changes
       run: |
-        git submodule update --init --recursive
         cd packages/qg_base && rm -rf .git
     - name: Commit files
       run: |
