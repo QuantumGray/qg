@@ -13,3 +13,6 @@
 [submodule "qg_flutter_starter submmodule"]
 	path = packages/qg_flutter_starter
 	url = https://github.com/QuantumGray/qg_flutter_starter
+[submodule "qg_flutter_firebase submmodule"]
+	path = packages/qg_flutter_firebase
+	url = https://github.com/QuantumGray/qg_flutter_firebase

@@ -19,9 +19,8 @@ command:
 
 scripts:
   # HOOKS
-  bootstrap: echo `bootstrap command is running...`
-  postbootstrap: echo `bootstrap command is done`
-
+  bootstrap: echo "bootstrap command is running..."
+  postbootstrap: echo "bootstrap command is done"
 
   #DEMO---
   demo_script:

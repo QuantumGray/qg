@@ -9,7 +9,7 @@
             "cwd": "${workspaceRoot}/packages/qg_server_starter",
             "request": "launch",
             "type": "dart",
-            "program": "${workspaceRoot}/packages/qg_server_starter/bin/server.dart"
+            "program": "${workspaceRoot}/packages/qg_server_starter/bin/bootstrap/main_development.dart"
         },
         {
             "name": "Launch Server (staging)",
@@ -27,6 +27,7 @@
         },
         {
             "name": "Launch App (development)",
+            "cwd": "${workspaceRoot}/packages/qg_flutter_starter",
             "request": "launch",
             "type": "dart",
             "program": "lib/bootstrap/main_development.dart",
@@ -34,7 +35,7 @@
               "--flavor",
               "development",
               "--target",
-              "lib/main_development.dart"
+              "lib/bootstrap/main_development.dart"
             ]
           },
           {
