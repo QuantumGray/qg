@@ -1,13 +1,7 @@
-# QG_ANALYSIS
-
-# Files and directories created by pub.
 .dart_tool/
 .packages
+melos_qg.iml
 
-# Conventional directory for build outputs.
-build/
+# PACKAGES
 
-# Omit committing pubspec.lock for library packages; see
-# https://dart.dev/guides/libraries/private-files#pubspeclock.
-pubspec.lock
-melos_qg_analysis.iml
+# QG_ANALYSIS
