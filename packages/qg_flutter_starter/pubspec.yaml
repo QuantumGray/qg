@@ -1,0 +1,66 @@
+name: qg_flutter_starter
+description: Project starter created by QuantumGray
+version: 1.0.0+1
+publish_to: none
+
+environment:
+  sdk: ">=2.14.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  qg_flutter_base:
+
+  # LOCALIZATIONS
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.17.0
+
+  widgetbook:
+
+  isar_flutter_libs:
+  isar_connect:
+
+  ferry:
+  gql_http_link:
+
+  # ANNOTATION
+  freezed_annotation:
+  json_annotation:
+  retrofit:
+  openapi_generator_annotations:
+  isar:
+
+
+dev_dependencies:
+  # TESTING
+  flutter_test:
+    sdk: flutter
+  mocktail: ^0.2.0
+  # bloc_test: ^9.0.1
+
+  # ANALYSIS
+  qg_analysis:
+    path: ../qg_analysis
+
+  # GEN
+  build_runner:
+  freezed:
+  json_serializable:
+  retrofit_generator:
+  openapi_generator:
+  ferry_generator:
+  isar_generator:
+  macro_builder:
+    git:
+      url: git://github.com/jakemac53/macro_prototype.git
+      ref: main
+
+dependency_overrides:
+  freezed_annotation: ^1.0.0
+  analyzer: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  generate: true

@@ -1,0 +1,56 @@
+name: qg_flutter_firebase
+description: base package for Dart/Flutter specific code for Firebase from QG
+version: 1.0.0+1
+publish_to: none
+
+environment:
+  sdk: ">=2.14.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  qg_flutter_base:
+
+  # FIREBASE
+  firebase_core:
+  firebase_auth:
+  google_sign_in:
+  firebase_messaging:
+  firebase_in_app_messaging:
+  cloud_functions:
+  firebase_storage:
+  cloud_firestore:
+  geoflutterfire:
+  firebase_database:
+  firebase_dynamic_links:
+  firebase_remote_config:
+  firebase_analytics:
+  firebase_performance:
+  firebase_crashlytics:
+  firebase_app_check:
+  flutterfire_ui:
+  firebase_ml_model_downloader:
+  flutter_cache_manager_firebase:
+
+dev_dependencies:
+  # LINT
+  qg_analysis:
+
+  # TEST
+  flutter_test:
+    sdk: flutter
+  testx:
+  mockingjay:
+  bloc_test:
+
+  # GEN
+  build_runner:
+  widgetbook_generator:
+
+dependency_overrides:
+  freezed_annotation: ^0.13.0-nullsafety.0
+
+flutter:
+  uses-material-design: true
+  generate: true

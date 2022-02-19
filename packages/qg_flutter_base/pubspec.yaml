@@ -1,0 +1,182 @@
+name: qg_flutter_base
+description: base package for Flutter code from QG
+version: 0.0.1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+  flutter: ">=2.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # LOCALIZATION
+  flutter_localizations:
+    sdk: flutter
+  intl:
+  timeago:
+
+  # ARCHITECTURE
+  flutter_hooks:
+  flow_builder:
+  hooks_riverpod: ^1.0.0
+  go_router: ^2.3.1
+  riverbloc:
+  bloc:
+  bloc_concurrency:
+  replay_bloc:
+  hydrated_bloc:
+  sealed_flutter_bloc:
+  flutter_form_bloc:
+  bloc_bus:
+
+  # UTILS
+  qg_base:
+    path: ../qg_base
+  flutter_blurhash:
+  infinite_scroll_pagination:
+  js:
+
+  # CLIENTS
+  sentry_flutter:
+
+  # IO
+  path_provider:
+  # flutter_archive:
+  flutter_cache_manager:
+  firebase_image:
+  jose:
+  dio:
+  dio_cache_interceptor:
+  #!flutter_data:
+  #!app_links
+  state_persistence:
+  hive:
+  hive_flutter:
+  drift:
+
+  # PRESENTATION
+
+  # - EXTENSIONS
+  styled_widget:
+  velocity_x:
+  getwidget:
+  responsive_framework:
+  slyverin:
+  sliver_tools:
+  matrix4_transform:
+  stream_transform:
+  spaces:
+  media_query_watcher:
+  scaffold_messenger_proxy:
+  flex_color_scheme:
+
+  # - ANIMATIONS
+  rive:
+  lottie:
+  animations:
+  simple_animations:
+
+  # - WIDGETS
+  flutter_slidable:
+  pinput:
+  animated_text_kit:
+  custom_refresh_indicator:
+  smooth_page_indicator:
+  flutter_portal:
+  extended_text:
+  badges:
+  percent_indicator:
+  sliding_up_panel:
+  flash:
+  widget_mask:
+  flutter_advanced_avatar:
+  animated_page_reveal:
+  plural_selectable:
+  #!app_feedback:
+  circular_clip_route:
+  flutter_bounceable:
+  parallax_animation:
+  sliding_number:
+  animated_tree_view:
+  expandable_sliver_list:
+  glopos:
+  reorderables:
+  motion_toast:
+  flicked_cards:
+  #!scribble:
+  glass_kit:
+  shimmer:
+  coachmaker:
+  stacked_notification_cards:
+  auto_animated:
+  funvas:
+  flutter_chat_ui:
+  #!flutter_sinusoidals:
+  flex_color_picker:
+  tap_builder:
+  animated_theme_switcher:
+  contained_tab_bar_view:
+  pal_widgets:
+  flutter_inner_drawer:
+  animated_splash_screen:
+  page_transition:
+  feedback:
+  qr_flutter:
+  step_progress_indicator:
+  flutter_platform_widgets:
+  video_player:
+  flutter_spinkit:
+  flutter_wizard:
+  preload_page_view:
+
+  # - UI-PARSER/SERVER-DRIVEN-RENDERING
+  #!shark:
+  rfw:
+
+  # - MISC
+  google_fonts:
+  macos_ui:
+  fluttertoast:
+  modals:
+  visibility_detector:
+  pixel_perfect:
+  #!device_preview: ^0.8.0
+  flutter_auto_form:
+  flutter_cube:
+  flutter_stage:
+  flutter_emoji:
+  widgetbook:
+
+  # # ANYINSPECT (COPY TO PROJECT IF NEEDED)
+  # anyinspect: ^0.1.1
+  # # Plugins
+  # anyinspect_plugin_network: ^0.1.0
+  # anyinspect_plugin_shared_preferences: ^0.1.0
+
+  # ANNOTATION
+  freezed_annotation:
+  copy_with_extension:
+  widgetbook_annotation:
+
+dev_dependencies:
+  # LINT
+  qg_analysis:
+
+  # TEST
+  flutter_test:
+    sdk: flutter
+  testx:
+  mockingjay:
+  bloc_test:
+
+  # GEN
+  build_runner:
+  widgetbook_generator:
+
+dependency_overrides:
+  freezed_annotation: ^0.13.0-nullsafety.0
+
+flutter:
+  uses-material-design: true
+  generate: true
