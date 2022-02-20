@@ -11,7 +11,7 @@ external set _functionName(void Function() f);
 external void functionName();
 
 void _someDartFunction() {
-  print('Hello from Dart!');
+  //
 }
 
 void main() {

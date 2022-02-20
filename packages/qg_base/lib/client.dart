@@ -12,7 +12,7 @@ class HttpClient {
       ..options.connectTimeout = 5000
       ..options.baseUrl = baseUrl
       ..options.headers = {'': "dio", "api-version": "1.0.0"};
-    var tokenDio = Dio();
+    final tokenDio = Dio();
     client.interceptors
       ..add(
         LoggerInterceptor(logger: Logger()),
@@ -27,7 +27,7 @@ class HttpClient {
       ..add(
         QueuedInterceptorsWrapper(
           onRequest: (options, handler) {
-            dynamic csrfToken = "";
+            final dynamic csrfToken = "";
             // print(
             //     'send request：path:${options.path}，baseURL:${options.baseUrl}');
             if (csrfToken == null) {
@@ -48,7 +48,6 @@ class HttpClient {
               //   },
               // );
             } else {
-              print('here');
               options.headers['csrfToken'] = csrfToken;
               return handler.next(options);
             }

@@ -86,7 +86,6 @@ class _AppWrapperState extends ConsumerState<AppWrapper> {
         urlPathStrategy: UrlPathStrategy.path,
         refreshListenable: _.refreshListenable
           ?..addListener(() {
-            print('router refreshed');
             _router?.refresh();
           }),
         redirect: _.redirector?.redirect,
@@ -187,7 +186,7 @@ class _AppWrapperState extends ConsumerState<AppWrapper> {
 
     return BetterFeedback(
       localizationsDelegates: _.localizationsDelegates!.toList(),
-      localeOverride: Locale('en'),
+      localeOverride: const Locale('en'),
       theme:
           _.feedbackTheme?.call(themeNotifier.mode(_.defaults, _.appWidgets)),
       child: MaterialApp.router(

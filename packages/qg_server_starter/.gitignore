@@ -1,6 +1,0 @@
-.dart_tool/
-.packages
-pubspec.lock
-
-build/
-melos_qg_server_starter.iml
