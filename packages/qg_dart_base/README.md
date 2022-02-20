@@ -5,7 +5,7 @@ A library for Dart developers.
 A simple usage example:
 
 ```dart
-import 'package:qg_base/qg_base.dart';
+import 'package:qg_dart_base/qg_dart_base.dart';
 
 main() {
   var awesome = new Awesome();

@@ -2,9 +2,9 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:qg_base/bootstrap.dart';
+import 'package:qg_dart_base/bootstrap.dart';
 
-export 'package:qg_base/bootstrap.dart';
+export 'package:qg_dart_base/bootstrap.dart';
 
 Future<void> bootstrapFlutter(
   FutureOr<void> Function() main, {

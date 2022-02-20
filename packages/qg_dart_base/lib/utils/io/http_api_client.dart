@@ -4,11 +4,11 @@ import 'dart:io';
 import 'dart:typed_data';
 import 'package:http/http.dart' as _http;
 import 'package:http/io_client.dart';
-import 'package:qg_base/exceptions/api_exceptions.dart';
-import 'package:qg_base/exceptions/base_exception.dart';
-import 'package:qg_base/exceptions/parse_exception.dart';
-import 'package:qg_base/qg_base.dart';
-import 'package:qg_base/utils/io/async_response.dart';
+import 'package:qg_dart_base/exceptions/api_exceptions.dart';
+import 'package:qg_dart_base/exceptions/base_exception.dart';
+import 'package:qg_dart_base/exceptions/parse_exception.dart';
+import 'package:qg_dart_base/qg_dart_base.dart';
+import 'package:qg_dart_base/utils/io/async_response.dart';
 
 final pApiRepository = Provider<IHttpApiClient>((_) => HttpApiClient());
 

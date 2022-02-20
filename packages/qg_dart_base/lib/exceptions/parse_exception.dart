@@ -1,4 +1,4 @@
-import 'package:qg_base/exceptions/exceptions.dart';
+import 'package:qg_dart_base/exceptions/exceptions.dart';
 
 class ParseException extends BaseException {
   @override

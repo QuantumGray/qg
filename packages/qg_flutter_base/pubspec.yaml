@@ -31,8 +31,8 @@ dependencies:
   bloc_bus:
 
   # UTILS
-  qg_base:
-    path: ../qg_base
+  qg_dart_base:
+    path: ../qg_dart_base
   flutter_blurhash:
   infinite_scroll_pagination:
   js:

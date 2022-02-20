@@ -1,4 +1,4 @@
-name: qg_base
+name: qg_dart_base
 description: base package for Dart code from QG
 version: 1.0.0
 publish_to: none
