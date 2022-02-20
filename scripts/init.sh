@@ -8,14 +8,14 @@ wait $!
 pwd
 
 echo "FETCHING PACKAGES SUBMODULES"
-git submodule add  --name qg_flutter_starter_ https://github.com/QuantumGray/git_hooks_flutter.git qg_flutter_starter
-git submodule add  --name qg_server_starter_ https://github.com/QuantumGray/quantumgray-flutter-snippets.git qg_server_starter
+git submodule add  --name flutter_app_ https://github.com/QuantumGray/git_hooks_flutter.git flutter_app
+git submodule add  --name dart_server_ https://github.com/QuantumGray/quantumgray-flutter-snippets.git dart_server
 git submodule update --init --recursive -j 2
 
 echo "INITIALISING PACKAGES"
 
-cd qg_flutter_starter && sh init.sh
-cd qg_server_starter && sh init.sh
+cd flutter_app && sh init.sh
+cd dart_server && sh init.sh
 
 echo "LINKING DEPENDENCIES"
 
