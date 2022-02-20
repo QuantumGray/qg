@@ -1,0 +1,19 @@
+name: qg_cli
+description: command-line application.
+version: 1.0.0
+
+environment:
+  sdk: '>=2.12.0 <3.0.0'
+
+
+dependencies:
+  qg_base:
+
+  path:
+  args:
+  yaml:
+  riverpod:
+  logger:
+
+dev_dependencies:
+  lints: ^1.0.0

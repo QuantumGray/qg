@@ -1,0 +1,8 @@
+.dart_tool/
+.packages
+pubspec.lock
+
+# Conventional directory for build output.
+build/
+
+melos_qg_cli.iml

@@ -1,6 +1,0 @@
-<component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Flutter Run -&gt; 'qg_flutter_starter'" type="FlutterRunConfigurationType" factoryName="Flutter">
-    <option name="filePath" value="$PROJECT_DIR$/packages/qg_flutter_starter/lib/main.dart" />
-    <method v="2" />
-  </configuration>
-</component>
