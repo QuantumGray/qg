@@ -1,27 +1,20 @@
 import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:qg_flutter_base/repositories/base_repository.dart';
+import 'package:qg_flutter_base/repositories/lifecycle/base_lifecycle_repository.dart';
 
-final Provider<ILifecycleRepository> pLifecycleRepository =
-    Provider<ILifecycleRepository>((ref) {
+final pLifecycleRepository = Provider<BaseLifecycleRepository>((ref) {
   final lifecycleRepository = LifecycleRepository(ref.read);
   ref.onDispose(() {
-    lifecycleRepository._streamController.close();
+    lifecycleRepository.dispose();
   });
   return lifecycleRepository;
 });
 
-abstract class ILifecycleRepository {
-  void onAppLifecycleStateChanged(AppLifecycleState _state);
-  Stream<Duration> get detached;
-  Stream<Duration> get inactive;
-  Stream<Duration> get paused;
-  Stream<Duration> get resumed;
-}
-
 class LifecycleRepository extends BaseRepository
-    implements ILifecycleRepository {
+    implements BaseLifecycleRepository {
   LifecycleRepository(Reader read) : super(read);
 
   @override
@@ -60,4 +53,9 @@ class LifecycleRepository extends BaseRepository
   Stream<Duration> get resumed => _streamController.stream
       .where((event) => event == AppLifecycleState.resumed)
       .map((_) => _timeFromLastChange);
+
+  @override
+  void dispose() {
+    _streamController.close();
+  }
 }

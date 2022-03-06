@@ -100,7 +100,7 @@ class _AppWrapperState extends ConsumerState<AppWrapper> {
                     body: ref.read(pWidgets).exceptionIndicator(context),
                   ),
                 ),
-        navigatorBuilder: (context, navigator) => Defaults(
+        navigatorBuilder: (context, state, navigator) => Defaults(
           defaults: _.defaults,
           child:
               // DevicePreview(
@@ -132,7 +132,7 @@ class _AppWrapperState extends ConsumerState<AppWrapper> {
                             ? _.spacingProvider!(context.media())
                             : pDefaultSpacing(context.media()),
                       ),
-                      child: navigator!,
+                      child: navigator,
                     ),
                   ),
                 ),
@@ -256,6 +256,7 @@ class DeepLinkRedirect extends Redirect {
         queryParameters: queryParams,
       );
     }
+    return null;
   }
 }
 

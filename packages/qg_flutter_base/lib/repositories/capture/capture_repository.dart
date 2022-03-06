@@ -7,11 +7,13 @@ import 'package:flutter/widgets.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:qg_flutter_base/repositories/base_repository.dart';
+import 'package:qg_flutter_base/repositories/capture/base_capture_repository.dart';
 
 final pCaptureRepository =
-    Provider<CaptureRepository>((ref) => CaptureRepository(ref.read));
+    Provider<BaseCaptureRepository>((ref) => CaptureRepository(ref.read));
 
-class CaptureRepository extends BaseRepository {
+class CaptureRepository extends BaseRepository
+    implements BaseCaptureRepository {
   CaptureRepository(Reader read) : super(read);
 
   Future<void> shareImage(

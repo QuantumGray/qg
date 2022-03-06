@@ -1,0 +1,16 @@
+name: qg_flutter_native_platform_interface
+description: A common platform interface for the qg_flutter_native plugin.
+version: 0.0.1
+publish_to: none
+
+environment:
+  sdk: ">=2.14.0 <3.0.0"
+  flutter: ">=2.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  plugin_platform_interface: ^2.0.1
+
+dev_dependencies:
+  qg_analysis:

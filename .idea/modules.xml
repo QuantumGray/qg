@@ -3,9 +3,19 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/packages/qg_analysis/melos_qg_analysis.iml" filepath="$PROJECT_DIR$/packages/qg_analysis/melos_qg_analysis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/packages/qg_cli/melos_qg_cli.iml" filepath="$PROJECT_DIR$/packages/qg_cli/melos_qg_cli.iml" />
       <module fileurl="file://$PROJECT_DIR$/packages/qg_dart_base/melos_qg_dart_base.iml" filepath="$PROJECT_DIR$/packages/qg_dart_base/melos_qg_dart_base.iml" />
       <module fileurl="file://$PROJECT_DIR$/packages/qg_flutter_base/melos_qg_flutter_base.iml" filepath="$PROJECT_DIR$/packages/qg_flutter_base/melos_qg_flutter_base.iml" />
       <module fileurl="file://$PROJECT_DIR$/packages/qg_flutter_firebase/melos_qg_flutter_firebase.iml" filepath="$PROJECT_DIR$/packages/qg_flutter_firebase/melos_qg_flutter_firebase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/packages/qg_flutter_native/qg_flutter_native/melos_qg_flutter_native.iml" filepath="$PROJECT_DIR$/packages/qg_flutter_native/qg_flutter_native/melos_qg_flutter_native.iml" />
+      <module fileurl="file://$PROJECT_DIR$/packages/qg_flutter_native/qg_flutter_native_android/melos_qg_flutter_native_android.iml" filepath="$PROJECT_DIR$/packages/qg_flutter_native/qg_flutter_native_android/melos_qg_flutter_native_android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/packages/qg_flutter_native/qg_flutter_native_ios/melos_qg_flutter_native_ios.iml" filepath="$PROJECT_DIR$/packages/qg_flutter_native/qg_flutter_native_ios/melos_qg_flutter_native_ios.iml" />
+      <module fileurl="file://$PROJECT_DIR$/packages/qg_flutter_native/qg_flutter_native_linux/melos_qg_flutter_native_linux.iml" filepath="$PROJECT_DIR$/packages/qg_flutter_native/qg_flutter_native_linux/melos_qg_flutter_native_linux.iml" />
+      <module fileurl="file://$PROJECT_DIR$/packages/qg_flutter_native/qg_flutter_native_macos/melos_qg_flutter_native_macos.iml" filepath="$PROJECT_DIR$/packages/qg_flutter_native/qg_flutter_native_macos/melos_qg_flutter_native_macos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/packages/qg_flutter_native/qg_flutter_native_platform_interface/melos_qg_flutter_native_platform_interface.iml" filepath="$PROJECT_DIR$/packages/qg_flutter_native/qg_flutter_native_platform_interface/melos_qg_flutter_native_platform_interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/packages/qg_flutter_native/qg_flutter_native_web/melos_qg_flutter_native_web.iml" filepath="$PROJECT_DIR$/packages/qg_flutter_native/qg_flutter_native_web/melos_qg_flutter_native_web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/packages/qg_flutter_native/qg_flutter_native_web/example/melos_qg_flutter_native_web_integration_tests.iml" filepath="$PROJECT_DIR$/packages/qg_flutter_native/qg_flutter_native_web/example/melos_qg_flutter_native_web_integration_tests.iml" />
+      <module fileurl="file://$PROJECT_DIR$/packages/qg_flutter_native/qg_flutter_native_windows/melos_qg_flutter_native_windows.iml" filepath="$PROJECT_DIR$/packages/qg_flutter_native/qg_flutter_native_windows/melos_qg_flutter_native_windows.iml" />
       <module fileurl="file://$PROJECT_DIR$/melos_qg.iml" filepath="$PROJECT_DIR$/melos_qg.iml" />
     </modules>
   </component>

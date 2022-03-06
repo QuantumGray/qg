@@ -1,4 +1,4 @@
-// // ignore: depend_on_referenced_packages
+// ignore: depend_on_referenced_packages
 // import 'package:isar/isar.dart';
 // import 'package:qg_flutter_base/base/request_response.dart';
 // import 'package:qg_flutter_base/presentation/presentation.dart';

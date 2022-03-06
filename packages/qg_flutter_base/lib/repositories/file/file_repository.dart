@@ -1,17 +1,15 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:dio/dio.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:qg_dart_base/qg_dart_base.dart' hide ZipFile, Response;
 import 'package:qg_flutter_base/repositories/base_repository.dart';
-import 'package:qg_flutter_base/base/utils/utils.dart';
+import 'package:qg_flutter_base/repositories/file/base_file_repository.dart';
 
-final Provider<FileRepository> pFileRepository =
-    Provider<FileRepository>((ref) => FileRepository(ref.read));
+final pFileRepository =
+    Provider<BaseFileRepository>((ref) => FileRepository(ref.read));
 
-class FileRepository extends BaseRepository {
+class FileRepository extends BaseRepository implements BaseFileRepository {
   FileRepository(Reader read) : super(read);
 
   Future<String> _docDirPath() async {
