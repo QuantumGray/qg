@@ -1,0 +1,28 @@
+name: qg_flutter_native_web
+description: An implementation for the Web platform of the Flutter qg_flutter_native plugin.
+version: 0.0.1
+publish_to: none
+
+environment:
+  sdk: ">=2.14.0 <3.0.0"
+  flutter: ">=2.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_web_plugins:
+    sdk: flutter
+  qg_flutter_native_platform_interface:
+    path: ../qg_flutter_native_platform_interface
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  qg_analysis:
+
+flutter:
+  plugin:
+    platforms:
+      web:
+        pluginClass: QgFlutterNativeWebPlatform
+        fileName: qg_flutter_native_web.dart

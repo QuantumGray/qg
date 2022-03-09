@@ -12,6 +12,8 @@ abstract class User<D, S extends UserSettings, A extends UserAuth> {
   @protected
   A? auth;
 
+  DateTime? lastUpdated;
+
   User({
     required this.data,
     required this.settings,

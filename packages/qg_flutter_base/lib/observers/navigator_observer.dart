@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:qg_flutter_base/repositories/navigation/navigatior_observer_repository.dart';
+import 'package:qg_flutter_base/repositories/navigator_observer/navigator_observer_repository.dart';
 
 class AppRouteObserver extends RouteObserver<PageRoute<dynamic>> {
   AppRouteObserver(this.read);

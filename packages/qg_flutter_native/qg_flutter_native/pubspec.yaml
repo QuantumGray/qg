@@ -1,0 +1,103 @@
+name: qg_flutter_native
+description: QG native plugin
+version: 0.0.1
+publish_to: none
+
+environment:
+  sdk: ">=2.16.1 <3.0.0"
+  flutter: ">=2.10.2"
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        default_package: qg_flutter_native_android
+      ios:
+        default_package: qg_flutter_native_ios
+      linux:
+        default_package: qg_flutter_native_linux
+      macos:
+        default_package: qg_flutter_native_macos
+      web:
+        default_package: qg_flutter_native_web
+      windows:
+        default_package: qg_flutter_native_windows
+
+dependencies:
+  flutter:
+    sdk: flutter
+  qg_flutter_native_android:
+    path: ../qg_flutter_native_android
+  qg_flutter_native_ios:
+    path: ../qg_flutter_native_ios
+  qg_flutter_native_linux:
+    path: ../qg_flutter_native_linux
+  qg_flutter_native_macos:
+    path: ../qg_flutter_native_macos
+  qg_flutter_native_web:
+    path: ../qg_flutter_native_web
+  qg_flutter_native_windows:
+    path: ../qg_flutter_native_windows
+  qg_flutter_native_platform_interface:
+    path: ../qg_flutter_native_platform_interface
+
+  # I/O
+  # - STORAGE
+  # # ? query generating local database implemented in rust especially useful for collections
+  # isar:
+  # isar_flutter_libs:
+  # # ? generic no-sql implemented in dart
+  # hive:
+  # hive_flutter:
+  # # ? secure storage implementation
+  # flutter_secure_storage:
+  # ? file cache manager
+  # flutter_cache_manager:
+  # # - PAYMENTS
+  # # ? client for interacting with google/apple pay
+  # mad_pay:
+  # # - MEDIA
+  # # ? sound player
+  # flutter_sound:
+  # chewie:
+  # video_player:
+  # # - AUTH
+  # local_auth:
+  # flutter_appauth:
+  # # - DEVICEINFO
+  # device_info_plus:
+  # connectivity_plus:
+  # permission_handler:
+  # package_info_plus:
+  # network_info_plus:
+  # battery_plus:
+  # sensors_plus:
+  # geolocator:
+  # # - RENDERER
+  # flutter_markdown:
+  # flutter_inappwebview:
+  # flutter_svg:
+  # path_drawing:
+  # # - MISC
+  # share_plus:
+  # #!social_share:
+  # clipboard:
+  # keyboard_actions:
+  # flutter_local_notifications:
+  # wakelock:
+
+  # # ANYINSPECT
+  # anyinspect: ^0.1.1
+  # # - plugins
+  # anyinspect_plugin_network: ^0.1.0
+  # anyinspect_plugin_shared_preferences: ^0.1.0
+
+dev_dependencies:
+    # LINT
+  qg_analysis:
+
+  # TEST
+  flutter_test:
+    sdk: flutter
+
+  plugin_platform_interface: ^2.0.1

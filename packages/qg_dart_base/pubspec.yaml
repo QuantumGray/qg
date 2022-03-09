@@ -4,127 +4,124 @@ version: 1.0.0
 publish_to: none
 
 environment:
-  sdk: '>=2.15.0 <3.0.0'
+  sdk: '>=2.16.0 <3.0.0'
 
 dependencies:
 
   # UTILS
-  riverpod:
-  stats:
-  starfruit:
-  rxdart:
-  stream_transform:
-  async:
-  dartx:
-  flinq:
-  more:
-  synchronized:
-  quiver:
-  vector_math:
-  supercharged_dart:
-  dartlin:
-  built_value:
-  built_collection:
-  meta:
-  collection:
-  typed_data:
-  petitparser:
-  equatable:
-  graphs:
-  event_bus:
-  cron:
-  isolated_worker:
-  formz:
-  dartz:
-  acyclic_steps:
-  chunked_stream:
-  neat_cache:
-  neat_periodic_task:
-  retry:
-  time:
+  riverpod: '>=1.0.3'
+  stats: '>=2.0.0'
+  starfruit: '>=2.0.0'
+  rxdart: '>=0.27.3'
+  stream_transform: '>=2.0.0'
+  async: '>=2.8.2'
+  dartx: '>=1.0.0'
+  flinq: '>=2.0.2'
+  more: '>=3.4.0'
+  synchronized: '>=3.0.0'
+  quiver: '>=3.0.1'
+  vector_math: '>=2.1.2'
+  supercharged_dart: '>=2.1.1'
+  dartlin: '>=0.6.2'
+  built_value: '>=8.1.4'
+  built_collection: '>=5.1.1'
+  meta: '>=1.7.0'
+  collection: '>=1.15.0'
+  typed_data: '>=1.3.0'
+  petitparser: '>=4.4.0'
+  equatable: '>=2.0.3'
+  graphs: '>=2.1.0'
+  event_bus: '>=2.0.0'
+  cron: '>=0.4.0'
+  isolated_worker: '>=0.1.0'
+  formz: '>=0.4.1'
+  dartz: '>=0.10.1'
+  acyclic_steps: '>=0.11.0'
+  chunked_stream: '>=1.4.1'
+  neat_cache: '>=2.0.1'
+  neat_periodic_task: '>=2.0.0'
+  retry: '>=3.1.0'
+  time: '>=2.1.0'
 
   # FORMAT
-  html:
-  markdown:
-  yaml:
-  qr:
+  html: '>=0.15.0'
+  markdown: '>=4.0.1'
+  yaml: '>=3.1.0'
+  qr: '>=3.0.0'
   # barcode: ^2.2.0
   # pdf: ^3.6.5
-  image:
-  crypto:
-  dotenv:
-  pointycastle:
-  uuid:
-  protobuf:
-  date_format:
-  money_formatter:
-  canonical_json:
-  pem:
-  sanitize_html:
-  slugid:
-  yaml_edit:
-  blurhash_dart:
+  image: '>=3.1.3'
+  crypto: '>=3.0.1'
+  dotenv: '>=3.0.0'
+  pointycastle: '>=3.5.1'
+  uuid: '>=3.0.6'
+  protobuf: '>=2.0.1'
+  date_format: '>=2.0.5'
+  money_formatter: '>=0.0.3'
+  canonical_json: '>=1.1.0'
+  pem: '>=2.0.0'
+  sanitize_html: '>=2.0.0'
+  slugid: '>=1.1.0'
+  yaml_edit: '>=2.0.1'
+  blurhash_dart: '>=1.1.0'
 
   # IO
-  path:
-  logger:
-  http:
+  path: '>=1.8.1'
+  logger: '>=1.1.0'
+  http: '>=0.13.4'
   # DIO --
-  dio:
-  dio_cache_interceptor:
-  fresh_dio:
-  dio_smart_retry:
-  gql_dio_link:
-  dio_http_formatter:
-  dio_http2_adapter:
+  dio: '>=4.0.4'
+  dio_cache_interceptor: '>=3.2.5'
+  fresh_dio: '>=0.3.1'
+  dio_smart_retry: '>=1.2.0'
+  # gql_dio_link: '>=0.2.2'
+  dio_http_formatter: '>=2.1.0'
+  dio_http2_adapter: '>=2.0.0'
   # --
   # !isar:
-  mime:
-  retrofit:
-  ferry:
-  gql_http_link:
-  grpc:
-  jose:
-  archive:
-  watcher:
-  json_rpc_2:
-  git:
-  git_hooks:
-  http_methods:
-  safe_url_check:
-  shelf_router:
-  shelf_router_generator:
+  mime: '>=1.0.1'
+  retrofit: '>=3.0.1'
+  ferry: '>=0.10.4'
+  # gql_http_link: '>=0.4.2'
+  grpc: '>=3.0.2'
+  jose: '>=0.3.2'
+  archive: '>=3.2.1'
+  watcher: '>=1.0.1'
+  json_rpc_2: '>=3.0.1'
+  git: '>=2.0.0'
+  git_hooks: '>=0.1.6'
+  http_methods: '>=1.1.0'
+  safe_url_check: '>=1.1.0'
+  shelf_router: '>=1.1.2'
+  shelf_router_generator: '>=1.0.2'
 
   # CLIENTS
   #googleapis:
 
   # ANNOTATION
-  freezed_annotation:
-  copy_with_extension:
-  functional_enum_annotation:
+  freezed_annotation: '>=1.1.0'
+  copy_with_extension: '>=4.0.0'
+  functional_enum_annotation: '>=1.1.4'
 
   # GEN-EXPORT
-  source_gen:
+  source_gen: '>=1.2.1'
 
 dev_dependencies:
   # LINT
-  qg_analysis:
+  # qg_analysis:
 
   # TEST
-  test:
-  testx:
-  mocktail:
-  glados:
+  test: '>=1.20.1'
+  mocktail: '>=0.2.0'
+  glados: '>=1.1.3'
 
   # GEN
-  build_runner:
-  # freezed:
+  build_runner: '>=2.1.7'
+  freezed: '>=1.1.1'
   # hive_generator:
   # functional_enum
   # isar_generator:
   # copy_with_extension_gen:
-  flutter_launcher_icons:
-
   # ferry_generator:
   # ACTIVATE IF NEEDED
   # retrofit_generator:
