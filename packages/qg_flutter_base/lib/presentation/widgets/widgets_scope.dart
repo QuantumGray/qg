@@ -3,8 +3,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:qg_flutter_base/presentation/widgets/indicators.dart';
 import 'package:spaces/spaces.dart';
 
-final pDefaultSpacing =
-    Provider.family<SpacingData, MediaQueryData>((ref, media) {
+final pSpacing = Provider.family<SpacingData, MediaQueryData>((ref, media) {
   if (media.size.width > 500) {
     return SpacingData.generate(30);
   }
