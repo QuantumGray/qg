@@ -11,8 +11,11 @@ dependencies:
     sdk: flutter
 
   qg_dart_base:
-    # # remove when sanify migrated to monorepo
-    # path: ../qg_dart_base
+    git:
+      url: https://github.com/QuantumGray/qg.git
+      ref: main
+      path: packages/qg_dart_base
+      version: 1.0.0
 
   # LOCALIZATION
   flutter_localizations:
@@ -175,6 +178,9 @@ dev_dependencies:
   widgetbook_generator: '>=1.0.3'
 
 dependency_overrides:
+  qg_dart_base:
+    path: ../qg/packages/qg_dart_base
+
   freezed_annotation: ^0.13.0-nullsafety.0
   qr: '^3.0.0'
 
