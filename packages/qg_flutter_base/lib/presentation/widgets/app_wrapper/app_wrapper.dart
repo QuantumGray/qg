@@ -10,6 +10,7 @@ import 'package:qg_flutter_base/extensions/extensions.dart';
 import 'package:qg_flutter_base/presentation/widgets/app_wrapper/app_wrapper_config.dart';
 import 'package:qg_flutter_base/presentation/widgets/lifecycle_manager.dart';
 import 'package:qg_flutter_base/presentation/widgets/wrappers.dart';
+import 'package:qg_flutter_base/repositories/navigation/base_navigation_repository.dart';
 import 'package:qg_flutter_base/repositories/navigation/navigation_repository.dart';
 import 'package:spaces/spaces.dart';
 
@@ -117,7 +118,7 @@ class _AppWrapperState extends ConsumerState<AppWrapper> {
                     body: ref.read(pWidgets).exceptionIndicator(context),
                   ),
                 ),
-        navigatorBuilder: (context, navigator) => Defaults(
+        navigatorBuilder: (context, state, navigator) => Defaults(
           defaults: providerConfig.defaults,
           child:
               // DevicePreview(
@@ -150,7 +151,7 @@ class _AppWrapperState extends ConsumerState<AppWrapper> {
                             ? providerConfig.spacingProvider!(context.media())
                             : pSpacing(context.media()),
                       ),
-                      child: navigator!,
+                      child: navigator,
                     ),
                   ),
                 ),
@@ -196,7 +197,7 @@ class _AppWrapperState extends ConsumerState<AppWrapper> {
   Widget build(BuildContext context) {
     ref.listen<NavigationState>(
       pNavigationRepository,
-      (_, state) => state.routerFunction?.call(router),
+      (previousState, state) => state.routerFunction?.call(router),
     );
 
     final themeNotifier = ref.watch(pThemeNotifier)

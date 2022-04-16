@@ -1,3 +1,14 @@
 {
     "dart.runPubGetOnPubspecChanges": false,
+    "dart.flutterSdkPath": ".fvm/flutter_sdk",
+    "search.exclude": {
+        "**/.fvm": true
+    },
+    "files.watcherExclude": {
+        "**/.fvm": true
+    },
+    "dart.flutterSdkPaths": [
+        "/Users/usr/fvm/versions/stable",
+        "/Users/usr/fvm/versions/dev"
+      ]
 }

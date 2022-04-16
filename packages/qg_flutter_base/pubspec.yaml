@@ -11,8 +11,8 @@ dependencies:
     sdk: flutter
 
   qg_dart_base:
-    # remove when sanify migrated to monorepo
-    path: ../qg_dart_base
+    # # remove when sanify migrated to monorepo
+    # path: ../qg_dart_base
 
   # LOCALIZATION
   flutter_localizations:
@@ -37,7 +37,8 @@ dependencies:
   # UTILS
   flutter_blurhash: '>=0.6.4'
   infinite_scroll_pagination: '>=3.1.0'
-  js: '>=0.6.4' # web only
+  flutterlifecyclehooks: ^2.0.0
+  # js: '>=0.6.4' # web only
 
   # CLIENTS
   sentry_flutter: '>=6.3.0'
@@ -60,7 +61,7 @@ dependencies:
 
   # - EXTENSIONS
   styled_widget: '>=0.4.0'
-  velocity_x: '>=3.4.0'
+  # velocity_x: '>=3.4.0'
   getwidget: '>=2.0.5'
   responsive_framework: '>=0.1.7'
   slyverin: '>=0.2.0'

@@ -8,12 +8,12 @@ String? modifierName(String? from, String modifier) {
 
 @sealed
 @immutable
-abstract class RequestResponse<T> {
-  const factory RequestResponse.data(T value) = RequestDataResponse<T>;
+abstract class RequestResponse<T, E> {
+  const factory RequestResponse.data(T value) = RequestDataResponse<T, E>;
   const factory RequestResponse.error(Object error, {StackTrace? stackTrace}) =
-      RequestErrorResponse<T>;
+      RequestErrorResponse<T, E>;
 
-  static Future<RequestResponse<T>> guard<T>(
+  static Future<RequestResponse<T, E>> guard<T, E>(
     Future<T> Function() future,
   ) async {
     try {
@@ -24,20 +24,20 @@ abstract class RequestResponse<T> {
   }
 
   R _map<R>({
-    required R Function(RequestDataResponse<T> data) data,
-    required R Function(RequestErrorResponse<T> error) error,
+    required R Function(RequestDataResponse<T, E> data) data,
+    required R Function(RequestErrorResponse<T, E> error) error,
   });
 }
 
-class RequestDataResponse<T> implements RequestResponse<T> {
+class RequestDataResponse<T, E> implements RequestResponse<T, E> {
   const RequestDataResponse(this.value);
 
   final T value;
 
   @override
   R _map<R>({
-    required R Function(RequestDataResponse<T> data) data,
-    required R Function(RequestErrorResponse<T> error) error,
+    required R Function(RequestDataResponse<T, E> data) data,
+    required R Function(RequestErrorResponse<T, E> error) error,
   }) {
     return data(this);
   }
@@ -50,7 +50,7 @@ class RequestDataResponse<T> implements RequestResponse<T> {
   @override
   bool operator ==(Object other) {
     return runtimeType == other.runtimeType &&
-        other is RequestDataResponse<T> &&
+        other is RequestDataResponse<T, E> &&
         other.value == value;
   }
 
@@ -58,11 +58,11 @@ class RequestDataResponse<T> implements RequestResponse<T> {
   int get hashCode => Object.hash(runtimeType, value);
 }
 
-extension RequestResponseExtension<T> on RequestResponse<T> {
+extension RequestResponseExtension<T, E> on RequestResponse<T, E> {
   @Deprecated('use `asData` instead')
-  RequestDataResponse<T>? get data => asData;
+  RequestDataResponse<T, E>? get data => asData;
 
-  RequestDataResponse<T>? get asData {
+  RequestDataResponse<T, E>? get asData {
     return _map(
       data: (d) => d,
       error: (e) => null,
@@ -77,7 +77,7 @@ extension RequestResponseExtension<T> on RequestResponse<T> {
     );
   }
 
-  RequestResponse<R> whenData<R>(R Function(T value) cb) {
+  RequestResponse<R, E> whenData<R>(R Function(T value) cb) {
     return _map(
       data: (d) {
         try {
@@ -128,8 +128,8 @@ extension RequestResponseExtension<T> on RequestResponse<T> {
   }
 
   R map<R>({
-    required R Function(RequestDataResponse<T> data) data,
-    required R Function(RequestErrorResponse<T> error) error,
+    required R Function(RequestDataResponse<T, E> data) data,
+    required R Function(RequestErrorResponse<T, E> error) error,
   }) {
     return _map(
       data: data,
@@ -138,8 +138,8 @@ extension RequestResponseExtension<T> on RequestResponse<T> {
   }
 
   R maybeMap<R>({
-    R Function(RequestDataResponse<T> data)? data,
-    R Function(RequestErrorResponse<T> error)? error,
+    R Function(RequestDataResponse<T, E> data)? data,
+    R Function(RequestErrorResponse<T, E> error)? error,
     required R Function() orElse,
   }) {
     return _map(
@@ -155,8 +155,8 @@ extension RequestResponseExtension<T> on RequestResponse<T> {
   }
 
   R? mapOrNull<R>({
-    R Function(RequestDataResponse<T> data)? data,
-    R Function(RequestErrorResponse<T> error)? error,
+    R Function(RequestDataResponse<T, E> data)? data,
+    R Function(RequestErrorResponse<T, E> error)? error,
   }) {
     return _map(
       data: (d) => data?.call(d),
@@ -165,15 +165,15 @@ extension RequestResponseExtension<T> on RequestResponse<T> {
   }
 }
 
-class RequestErrorResponse<T> implements RequestResponse<T> {
+class RequestErrorResponse<T, E> implements RequestResponse<T, E> {
   const RequestErrorResponse(this.error, {this.stackTrace});
   final Object error;
   final StackTrace? stackTrace;
 
   @override
   R _map<R>({
-    required R Function(RequestDataResponse<T> data) data,
-    required R Function(RequestErrorResponse<T> error) error,
+    required R Function(RequestDataResponse<T, E> data) data,
+    required R Function(RequestErrorResponse<T, E> error) error,
   }) {
     return error(this);
   }
@@ -186,7 +186,7 @@ class RequestErrorResponse<T> implements RequestResponse<T> {
   @override
   bool operator ==(Object other) {
     return runtimeType == other.runtimeType &&
-        other is RequestErrorResponse<T> &&
+        other is RequestErrorResponse<T, E> &&
         other.error == error &&
         other.stackTrace == stackTrace;
   }

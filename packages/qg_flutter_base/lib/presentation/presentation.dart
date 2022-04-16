@@ -56,7 +56,6 @@ export 'package:smooth_page_indicator/smooth_page_indicator.dart';
 export 'package:stacked_notification_cards/stacked_notification_cards.dart';
 // # - EXTENSIONS
 export 'package:styled_widget/styled_widget.dart';
-export 'package:velocity_x/velocity_x.dart';
 // export 'package:fluttertoast/fluttertoast.dart'; conflicts with flash
 export 'package:visibility_detector/visibility_detector.dart';
 export 'package:widget_mask/widget_mask.dart';
