@@ -178,8 +178,8 @@ dev_dependencies:
   widgetbook_generator: '>=1.0.3'
 
 dependency_overrides:
-  qg_dart_base:
-    path: ../qg/packages/qg_dart_base
+  # qg_dart_base:
+  #   path: ../qg/packages/qg_dart_base
 
   freezed_annotation: ^0.13.0-nullsafety.0
   qr: '^3.0.0'
