@@ -9,7 +9,7 @@ mixin PropertiesComponent {
     screenInsets = context.screenInsets();
     theme = Theme.of(context);
     media = MediaQuery.of(context);
-    // defaults = context.defaults(ref);
+    defaults = context.defaults(ref);
     widgets = ref.read(pWidgets);
   }
 
@@ -17,6 +17,6 @@ mixin PropertiesComponent {
   late EdgeInsets screenInsets;
   late ThemeData theme;
   late MediaQueryData media;
-  // late BaseDefaults defaults;
+  late BaseDefaults defaults;
   late BaseWidgets widgets;
 }
