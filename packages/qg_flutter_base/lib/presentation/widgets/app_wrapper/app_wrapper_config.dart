@@ -49,8 +49,7 @@ class RouterConfig {
   final List<NavigatorObserver>? observers;
   final List<GoRoute> routes;
   final Page<dynamic> Function(BuildContext, GoRouterState)? errorPageBuilder;
-  final void Function(WidgetRef ref, void Function() notifyListeners)?
-      refresh; // refactor
+  final void Function(WidgetRef ref, void Function() notifyListeners)? refresh;
   final GoRouterRedirector? redirector;
   final List<Wrapper>? navigatorWrappers;
   final SplashConfig? splashConfig;

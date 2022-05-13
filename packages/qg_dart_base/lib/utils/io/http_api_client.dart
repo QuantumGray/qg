@@ -7,8 +7,8 @@ import 'package:http/io_client.dart';
 import 'package:qg_dart_base/exceptions/api_exceptions.dart';
 import 'package:qg_dart_base/exceptions/base_exception.dart';
 import 'package:qg_dart_base/exceptions/parse_exception.dart';
-import 'package:qg_dart_base/qg_dart_base.dart';
 import 'package:qg_dart_base/utils/io/async_response.dart';
+import 'package:riverpod/riverpod.dart';
 
 final pApiRepository = Provider<IHttpApiClient>((_) => HttpApiClient());
 
@@ -82,7 +82,7 @@ class HttpApiClient implements IHttpApiClient {
     Map<String, String> headers,
   ) async {
     try {
-      final response = await _client.send(Request('GET', Uri.parse(uri)));
+      final response = await _client.send(_http.Request('GET', Uri.parse(uri)));
       if (response.statusCode >= 200 && response.statusCode <= 299) {
         return response;
       }
@@ -90,6 +90,7 @@ class HttpApiClient implements IHttpApiClient {
     } on SocketException {
       throw NoInternetException();
     }
+    return null;
   }
 
   @override
@@ -155,9 +156,9 @@ class HttpApiClient implements IHttpApiClient {
   @override
   Future<BaseException> parseException(_http.BaseResponse res) async {
     String body;
-    if (res is Response) {
+    if (res is _http.Response) {
       body = res.body;
-    } else if (res is StreamedResponse) {
+    } else if (res is _http.StreamedResponse) {
       body = await res.stream.bytesToString();
     }
 
