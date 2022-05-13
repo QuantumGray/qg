@@ -1,6 +1,6 @@
 name: qg_flutter_base
 description: base package for Flutter code from QG
-version: 0.0.1
+version: 0.0.2
 
 environment:
   sdk: ">=2.16.0 <3.0.0"
