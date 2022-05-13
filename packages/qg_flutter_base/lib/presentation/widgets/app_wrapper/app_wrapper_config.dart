@@ -49,7 +49,8 @@ class RouterConfig {
   final List<NavigatorObserver>? observers;
   final List<GoRoute> routes;
   final Page<dynamic> Function(BuildContext, GoRouterState)? errorPageBuilder;
-  final Listenable? refreshListenable; // refactor
+  final void Function(WidgetRef ref, void Function() notifyListeners)?
+      refresh; // refactor
   final GoRouterRedirector? redirector;
   final List<Wrapper>? navigatorWrappers;
   final SplashConfig? splashConfig;
@@ -60,7 +61,7 @@ class RouterConfig {
     this.observers,
     required this.routes,
     this.errorPageBuilder,
-    this.refreshListenable,
+    this.refresh,
     this.redirector,
     this.navigatorWrappers,
     this.splashConfig,
@@ -70,8 +71,8 @@ class RouterConfig {
 
 class ProviderConfig {
   final ProviderFamily<SpacingData, MediaQueryData>? spacingProvider;
-  final IDefaults defaults;
-  final IAppWidgetsFactory appWidgets;
+  final BaseDefaults defaults;
+  final BaseWidgets appWidgets;
 
   const ProviderConfig({
     this.spacingProvider,

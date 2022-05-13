@@ -27,14 +27,14 @@ class ThemeNotifier extends ChangeNotifier {
     notifyListeners();
   }
 
-  ThemeData dark(IDefaults defaults, IAppWidgetsFactory widgets) =>
+  ThemeData dark(BaseDefaults defaults, BaseWidgets widgets) =>
       _baseTheme.build(
         _baseTheme.colorSchemeBuilder(Brightness.dark),
         defaults,
         widgets,
       );
 
-  ThemeData light(IDefaults defaults, IAppWidgetsFactory widgets) =>
+  ThemeData light(BaseDefaults defaults, BaseWidgets widgets) =>
       _baseTheme.build(
         _baseTheme.colorSchemeBuilder(Brightness.light),
         defaults,
@@ -43,8 +43,8 @@ class ThemeNotifier extends ChangeNotifier {
 
   ThemeData from(
     Brightness brightness,
-    IDefaults defaults,
-    IAppWidgetsFactory widgets,
+    BaseDefaults defaults,
+    BaseWidgets widgets,
   ) =>
       _baseTheme.build(
         _baseTheme.colorSchemeBuilder(brightness),
@@ -53,8 +53,8 @@ class ThemeNotifier extends ChangeNotifier {
       );
 
   ThemeData mode(
-    IDefaults defaults,
-    IAppWidgetsFactory widgets,
+    BaseDefaults defaults,
+    BaseWidgets widgets,
   ) {
     final brightness = _themeMode == ThemeMode.system
         ? Brightness.light

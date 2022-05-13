@@ -10,7 +10,10 @@ dependencies:
   flutter:
     sdk: flutter
 
-  qg_dart_base:
+
+  hooks_riverpod:
+  # qg_dart_base:
+  qg_flutter_base:
 
   # FIREBASE
   firebase_core: '>=1.12.0'

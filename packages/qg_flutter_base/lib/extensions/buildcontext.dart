@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:qg_flutter_base/extensions/extensions.dart';
-import 'package:qg_flutter_base/presentation/widgets/widgets_scope.dart';
+import 'package:spaces/spaces.dart';
 
-extension BuildContextY on BuildContext {
-  ThemeData get theme => Theme.of(this);
+extension BuildContextExtensions on BuildContext {
+  EdgeInsets screenInsets() => spacing().insets.exceptBottom.semiBig;
+  ThemeData theme() => Theme.of(this);
+  MediaQueryData media() => MediaQuery.of(this);
+  BaseDefaults defaults(WidgetRef ref) => ref.read(pDefaults);
+  BaseWidgets widgets(WidgetRef ref) => ref.read(pWidgets);
 
+  // ELEMENT
   T? dependOn<T extends InheritedWidget>() =>
       dependOnInheritedWidgetOfExactType<T>();
 
@@ -37,7 +42,4 @@ extension BuildContextY on BuildContext {
   }
 
   BuildOwner owner() => this.owner!;
-
-  IDefaults defaults(WidgetRef ref) => ref.read(pDefaults);
-  Widgets widgets(WidgetRef ref) => ref.read(pWidgets);
 }

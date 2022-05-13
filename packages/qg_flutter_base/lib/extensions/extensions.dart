@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:spaces/spaces.dart';
 
 export 'buildcontext.dart';
 export 'color.dart';
@@ -8,24 +7,12 @@ export 'materialstateproperty.dart';
 export 'page_controller.dart';
 export 'widget.dart';
 
-extension SpacingDataScreenInsets on BuildContext {
-  EdgeInsets screenInsets() => spacing().insets.exceptBottom.semiBig;
-}
-
-extension ThemeDataFromContext on BuildContext {
-  ThemeData theme() => Theme.of(this);
-}
-
-extension MediaqueryFromContext on BuildContext {
-  MediaQueryData media() => MediaQuery.of(this);
-}
-
-final pDefaults = Provider<IDefaults>(
+final pDefaults = Provider<BaseDefaults>(
   (ref) => throw UnimplementedError('no Defaults set yet'),
 );
 
-abstract class IDefaults {
-  const IDefaults();
+abstract class BaseDefaults {
+  const BaseDefaults();
 
   Duration get pageTransitionDuration;
   Curve get pageTransitionCurve;
@@ -47,7 +34,7 @@ abstract class IDefaults {
 }
 
 class Defaults extends StatelessWidget {
-  final IDefaults defaults;
+  final BaseDefaults defaults;
   final Widget child;
 
   const Defaults({
@@ -67,72 +54,36 @@ class Defaults extends StatelessWidget {
   }
 }
 
-abstract class IAppWidgetsFactory {
-  const IAppWidgetsFactory();
+abstract class BaseWidgets {
+  const BaseWidgets();
   Widget loadingIndicator({Stream? progress});
   Widget exceptionIndicator(Exception exception);
   Widget emptyIndicator({String? forSubject});
   Widget nothingFoundIndicator({String? forSubject});
 }
 
-class AppWidgets extends StatelessWidget {
-  final IAppWidgetsFactory widgets;
+class Widgets extends ConsumerWidget {
   final Widget child;
+  final BaseWidgets widgets;
 
-  const AppWidgets({
+  const Widgets({
     Key? key,
-    required this.widgets,
     required this.child,
+    required this.widgets,
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final widgets = ref.read(pWidgets);
     return ProviderScope(
       overrides: [
-        pAppWidgets.overrideWithValue(widgets),
+        pWidgets.overrideWithValue(widgets),
       ],
       child: child,
     );
   }
 }
 
-final pAppWidgets = Provider<IAppWidgetsFactory>(
+final pWidgets = Provider<BaseWidgets>(
   (ref) => throw UnimplementedError('no appwidgets set yet'),
 );
-
-extension AppWidgetsRef on WidgetRef {
-  IAppWidgetsFactory widgets() => read(pAppWidgets);
-}
-
-@immutable
-abstract class ExplainableException implements Exception {
-  factory ExplainableException.fromTime(DateTime time) =
-      _ExplainableExceptionFromTime;
-
-  final DateTime throwTime = DateTime.now();
-
-  String explain<T>(T localizations);
-
-  @override
-  String toString() => '$throwTime;$hashCode';
-
-  @override
-  bool operator ==(Object other) =>
-      (other is ExplainableException) && (other.throwTime == throwTime);
-
-  @override
-  int get hashCode => throwTime.hashCode;
-}
-
-// ignore: avoid_implementing_value_types
-class _ExplainableExceptionFromTime implements ExplainableException {
-  _ExplainableExceptionFromTime(this.time);
-
-  final DateTime time;
-
-  @override
-  String explain<Null>(dynamic _) => '$time';
-
-  @override
-  DateTime get throwTime => time;
-}

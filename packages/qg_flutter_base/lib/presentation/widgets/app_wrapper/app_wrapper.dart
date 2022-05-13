@@ -7,15 +7,13 @@ import 'package:page_transition/page_transition.dart';
 import 'package:pixel_perfect/pixel_perfect.dart';
 import 'package:qg_flutter_base/base/theme/theme_notifier.dart';
 import 'package:qg_flutter_base/extensions/extensions.dart';
+import 'package:qg_flutter_base/presentation/widgets/animated_splash_screen.dart';
 import 'package:qg_flutter_base/presentation/widgets/app_wrapper/app_wrapper_config.dart';
 import 'package:qg_flutter_base/presentation/widgets/lifecycle_manager.dart';
 import 'package:qg_flutter_base/presentation/widgets/wrappers.dart';
 import 'package:qg_flutter_base/repositories/navigation/base_navigation_repository.dart';
 import 'package:qg_flutter_base/repositories/navigation/navigation_repository.dart';
 import 'package:spaces/spaces.dart';
-
-import '../animated_splash_screen.dart';
-import '../widgets_scope.dart';
 
 // provider watcher builder instead of direct provider
 // authStateChanged listenable (stream)
@@ -25,62 +23,10 @@ import '../widgets_scope.dart';
 class AppWrapper extends ConsumerStatefulWidget {
   // CONFIG
   final AppWrapperConfig config;
-  // final Iterable<LocalizationsDelegate<dynamic>>? localizationsDelegates;
-  // final Iterable<Locale> supportedLocales;
-  // final Locale? Function(List<Locale>?, Iterable<Locale>)?
-  //     localeListResolutionCallback;
-  // final BaseTheme baseTheme;
-  // final FeedbackThemeData Function(ThemeData theme)? feedbackTheme;
-  // final Widget? Function(AppLifecycleState state)? onAppLifecycleStateChanged;
-  // final bool devicePreviewEnabled;
-  // final Map<LogicalKeySet, Intent> shortcuts;
-  // final Map<Type, Action<Intent>> Function(BuildContext context)?
-  //     actionsBuilder;
-  // final String? pixelPerfectAsset;
-  // // ROUTER
-  // final String? initialLocation;
-  // final List<NavigatorObserver>? observers;
-  // final List<GoRoute> routes;
-  // final Page<dynamic> Function(BuildContext, GoRouterState)? errorPageBuilder;
-  // final Listenable? refreshListenable;
-  // final GoRouterRedirector? redirector;
-  // final List<Wrapper>? navigatorWrappers;
-  // // PROVIDER OVERRIDES
-  // final ProviderFamily<SpacingData, MediaQueryData>? spacingProvider;
-  // final IDefaults defaults;
-  // final IAppWidgetsFactory appWidgets;
-  // // SPLASH
-  // final SplashConfig? splashConfig;
-  // final bool routerShouldRefresh;
-  // final bool debugShowCheckedModeBanner;
 
   const AppWrapper({
     Key? key,
     required this.config,
-    //
-    // this.localizationsDelegates,
-    // this.supportedLocales = const <Locale>[Locale('en', 'US')],
-    // this.localeListResolutionCallback,
-    // required this.baseTheme,
-    // this.feedbackTheme,
-    // this.onAppLifecycleStateChanged,
-    // this.observers,
-    // this.redirector,
-    // this.initialLocation,
-    // required this.routes,
-    // this.errorPageBuilder,
-    // this.refreshListenable,
-    // this.devicePreviewEnabled = false,
-    // this.shortcuts = const {},
-    // this.actionsBuilder,
-    // this.pixelPerfectAsset,
-    // this.navigatorWrappers,
-    // this.spacingProvider,
-    // required this.defaults,
-    // required this.appWidgets,
-    // this.splashConfig,
-    // this.routerShouldRefresh = false,
-    // this.debugShowCheckedModeBanner = true,
   }) : super(key: key);
   @override
   _AppWrapperState createState() => _AppWrapperState();
@@ -102,10 +48,9 @@ class _AppWrapperState extends ConsumerState<AppWrapper> {
   GoRouter get router => _router ??= GoRouter(
         observers: routerConfig.observers,
         urlPathStrategy: UrlPathStrategy.path,
-        refreshListenable: routerConfig.refreshListenable
-          ?..addListener(() {
-            _router?.refresh();
-          }),
+        refreshListenable: routerConfig.refresh != null
+            ? _RouterRefreshListenable(ref, routerConfig.refresh!)
+            : null,
         redirect: routerConfig.redirector?.redirect,
         initialLocation: routerConfig.splashConfig != null ? '/splash' : '/',
         routes: [
@@ -115,7 +60,7 @@ class _AppWrapperState extends ConsumerState<AppWrapper> {
         errorPageBuilder: routerConfig.errorPageBuilder ??
             (context, state) => MaterialPage(
                   child: Scaffold(
-                    body: ref.read(pWidgets).exceptionIndicator(context),
+                    body: ref.read(pWidgets).exceptionIndicator(state.error!),
                   ),
                 ),
         navigatorBuilder: (context, state, navigator) => Defaults(
@@ -125,7 +70,7 @@ class _AppWrapperState extends ConsumerState<AppWrapper> {
               //   enabled: qaConfig.devicePreviewEnabled,
               //   builder: (context) =>
 
-              AppWidgets(
+              Widgets(
             widgets: providerConfig.appWidgets,
             child: Shortcuts(
               shortcuts: appConfig.shortcuts,
@@ -147,9 +92,7 @@ class _AppWrapperState extends ConsumerState<AppWrapper> {
                     ],
                     child: Spacing(
                       dataBuilder: (context) => ref.watch(
-                        providerConfig.spacingProvider != null
-                            ? providerConfig.spacingProvider!(context.media())
-                            : pSpacing(context.media()),
+                        providerConfig.spacingProvider!(context.media()),
                       ),
                       child: navigator,
                     ),
@@ -226,5 +169,17 @@ class _AppWrapperState extends ConsumerState<AppWrapper> {
         localeListResolutionCallback: appConfig.localeListResolutionCallback,
       ),
     );
+  }
+}
+
+class _RouterRefreshListenable extends ChangeNotifier {
+  final WidgetRef ref;
+  final void Function(WidgetRef ref, void Function() notifyListeners) refresh;
+
+  _RouterRefreshListenable(
+    this.ref,
+    this.refresh,
+  ) {
+    refresh(ref, notifyListeners);
   }
 }

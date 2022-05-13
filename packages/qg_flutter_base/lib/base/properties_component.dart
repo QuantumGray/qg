@@ -9,14 +9,14 @@ mixin PropertiesComponent {
     screenInsets = context.screenInsets();
     theme = Theme.of(context);
     media = MediaQuery.of(context);
-    defaults = context.defaults(ref);
-    widgets = ref.read(pAppWidgets);
+    // defaults = context.defaults(ref);
+    widgets = ref.read(pWidgets);
   }
 
   late SpacingData spacing;
   late EdgeInsets screenInsets;
   late ThemeData theme;
   late MediaQueryData media;
-  late IDefaults defaults;
-  late IAppWidgetsFactory widgets;
+  // late BaseDefaults defaults;
+  late BaseWidgets widgets;
 }

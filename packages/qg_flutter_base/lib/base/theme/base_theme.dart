@@ -12,7 +12,7 @@ abstract class BaseTheme {
 
   ThemeData build(
     ColorScheme colorScheme,
-    IDefaults defaults,
-    IAppWidgetsFactory widgets,
+    BaseDefaults defaults,
+    BaseWidgets widgets,
   );
 }
