@@ -74,7 +74,6 @@ class Widgets extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final widgets = ref.read(pWidgets);
     return ProviderScope(
       overrides: [
         pWidgets.overrideWithValue(widgets),
