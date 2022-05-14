@@ -1,4 +1,5 @@
 // import 'package:device_preview/device_preview.dart';
+import 'package:device_preview/device_preview.dart';
 import 'package:feedback/feedback.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -63,38 +64,36 @@ class _AppWrapperState extends ConsumerState<AppWrapper> {
                     body: ref.read(pWidgets).exceptionIndicator(state.error!),
                   ),
                 ),
-        navigatorBuilder: (context, state, navigator) => Defaults(
-          defaults: providerConfig.defaults,
-          child:
-              // DevicePreview(
-              //   enabled: qaConfig.devicePreviewEnabled,
-              //   builder: (context) =>
-
-              Widgets(
-            widgets: providerConfig.appWidgets,
-            child: Shortcuts(
-              shortcuts: appConfig.shortcuts,
-              child: Actions(
-                actions: appConfig.actionsBuilder != null
-                    ? appConfig.actionsBuilder!(context)
-                    : const {},
-                child: LifecycleManager(
-                  onAppLifecycleStateChanged:
-                      appConfig.onAppLifecycleStateChanged,
-                  child: Wrappers(
-                    wrappers: [
-                      if (qaConfig.pixelPerfectAsset != null)
-                        (context, child) => PixelPerfect(
-                              assetPath: qaConfig.pixelPerfectAsset,
-                              child: child,
-                            ),
-                      ...?routerConfig.navigatorWrappers,
-                    ],
-                    child: Spacing(
-                      dataBuilder: (context) => ref.watch(
-                        providerConfig.spacingProvider!(context.media()),
+        navigatorBuilder: (context, state, navigator) => Spacing(
+          dataBuilder: (context) => ref.watch(
+            providerConfig.spacingProvider!(context.media()),
+          ),
+          child: Defaults(
+            defaults: providerConfig.defaults,
+            child: DevicePreview(
+              enabled: qaConfig.devicePreviewEnabled,
+              builder: (context) => Widgets(
+                widgets: providerConfig.appWidgets,
+                child: Shortcuts(
+                  shortcuts: appConfig.shortcuts,
+                  child: Actions(
+                    actions: appConfig.actionsBuilder != null
+                        ? appConfig.actionsBuilder!(context)
+                        : const {},
+                    child: LifecycleManager(
+                      onAppLifecycleStateChanged:
+                          appConfig.onAppLifecycleStateChanged,
+                      child: Wrappers(
+                        wrappers: [
+                          if (qaConfig.pixelPerfectAsset != null)
+                            (context, child) => PixelPerfect(
+                                  assetPath: qaConfig.pixelPerfectAsset,
+                                  child: child,
+                                ),
+                          ...?routerConfig.navigatorWrappers,
+                        ],
+                        child: navigator,
                       ),
-                      child: navigator,
                     ),
                   ),
                 ),
@@ -102,7 +101,6 @@ class _AppWrapperState extends ConsumerState<AppWrapper> {
             ),
           ),
         ),
-        // ),
       );
 
   GoRoute get _splashRoute {
