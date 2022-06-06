@@ -16,9 +16,11 @@ class Wrappers extends StatelessWidget {
   Widget build(BuildContext context) {
     late Widget widget;
     for (int i = 0; i < wrappersCount; i++) {
-      widget = Builder(builder: (context) {
-        return wrappers[i](context, (wrappersCount == i) ? widget : child);
-      });
+      widget = Builder(
+        builder: (context) {
+          return wrappers[i](context, (wrappersCount == i) ? widget : child);
+        },
+      );
     }
     if (wrappersCount == 0) {
       widget = child;

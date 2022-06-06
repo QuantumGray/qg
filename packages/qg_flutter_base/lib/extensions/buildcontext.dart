@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:qg_flutter_base/extensions/extensions.dart';
-import 'package:spaces/spaces.dart';
+import 'package:qg_flutter_base/widgets/spaces/spacing.dart';
 
 extension BuildContextExtensions on BuildContext {
   EdgeInsets screenInsets() => spacing().insets.exceptBottom.semiBig;

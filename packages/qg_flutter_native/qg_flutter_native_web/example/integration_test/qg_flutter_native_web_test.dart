@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_web_libraries_in_flutter, avoid_implementing_value_types
+
 import 'dart:html';
 
 import 'package:flutter_test/flutter_test.dart';
@@ -17,11 +19,16 @@ void main() {
     setUp(() async {
       window = MockWindow();
 
-      QgFlutterNativePlatform.instance = QgFlutterNativeWebPlatform()..window = window;
+      QgFlutterNativePlatform.instance = QgFlutterNativeWebPlatform()
+        ..window = window;
     });
 
-    testWidgets('QgFlutterNativeWebPlatform is the live instance', (tester) async {
-      expect(QgFlutterNativePlatform.instance, isA<QgFlutterNativeWebPlatform>());
+    testWidgets('QgFlutterNativeWebPlatform is the live instance',
+        (tester) async {
+      expect(
+        QgFlutterNativePlatform.instance,
+        isA<QgFlutterNativeWebPlatform>(),
+      );
     });
   });
 }

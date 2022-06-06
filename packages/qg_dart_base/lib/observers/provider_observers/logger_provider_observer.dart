@@ -31,7 +31,7 @@ class LoggerProviderObserver extends ProviderObserver {
   }
 
   @override
-  void didDisposeProvider(ProviderBase provider, container) {
+  void didDisposeProvider(ProviderBase provider, ProviderContainer container) {
     l.i(
       '''
     PROVIDER DISPOSED

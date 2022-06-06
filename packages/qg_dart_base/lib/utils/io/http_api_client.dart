@@ -155,12 +155,12 @@ class HttpApiClient implements IHttpApiClient {
 
   @override
   Future<BaseException> parseException(_http.BaseResponse res) async {
-    String body;
-    if (res is _http.Response) {
-      body = res.body;
-    } else if (res is _http.StreamedResponse) {
-      body = await res.stream.bytesToString();
-    }
+    // String body;
+    // if (res is _http.Response) {
+    //   body = res.body;
+    // } else if (res is _http.StreamedResponse) {
+    //   body = await res.stream.bytesToString();
+    // }
 
     switch (res.statusCode) {
       case 500:

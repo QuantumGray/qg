@@ -1,3 +1,5 @@
+// ignore_for_file: invalid_use_of_visible_for_testing_member
+
 import 'dart:async';
 import 'package:riverpod/riverpod.dart';
 import 'package:dotenv/dotenv.dart';
@@ -22,12 +24,13 @@ Future<void> runDart({
       runner,
   Function? onError,
 }) async {
-  load();
+  final dotEnv = DotEnv();
+  dotEnv.load();
   final container = ProviderContainer(
     overrides: [
       runtimeConfigOverride(
         pRuntimeConfig,
-        env,
+        dotEnv.map,
       ),
     ],
   );
@@ -60,15 +63,13 @@ class RuntimeConfig<X extends Object, E extends Object> {
     required this.debug,
     required this.extended,
     required this.environment,
-  }) {
-    load();
-  }
+  });
 }
 
 typedef Environment = Map<String, String>;
 
 extension EnvironmentGetters on Environment {
-  Map<String, String> get _env => env;
+  Map<String, String> get _env => DotEnv().map;
 
   String get gcpProjectId => _env['GCP_PROJECT_ID']!;
   String get jwtIssuer => _env['JWT_ISSUER']!;

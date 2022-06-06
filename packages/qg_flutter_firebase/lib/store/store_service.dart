@@ -63,6 +63,11 @@ class StoreRepository extends BaseRepository {
 
   DateTime? _getSyncTimestamp() =>
       Hive.box<DateTime>(HiveBoxes.syncTimestamp).get('main');
+
+  void dispose() {
+    _eventSyncSubscription.cancel();
+    _eventSyncHiveSubscription.cancel();
+  }
 }
 
 // ignore: avoid_classes_with_only_static_members

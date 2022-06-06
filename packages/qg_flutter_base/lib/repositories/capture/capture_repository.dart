@@ -89,14 +89,4 @@ class CaptureRepository extends BaseRepository
 
     return byteData!.buffer.asUint8List();
   }
-
-  @override
-  void dispose() {
-    // TODO: implement dispose
-  }
-
-  @override
-  void init() {
-    // TODO: implement init
-  }
 }

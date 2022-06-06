@@ -338,7 +338,7 @@ linter:
     # Dart SDK: 2.14.0-172.0.dev • (Linter v1.5.0)
     #
     # https://dart-lang.github.io/linter/lints/depend_on_referenced_packages.html
-    - depend_on_referenced_packages
+    # - depend_on_referenced_packages
 
     # When deprecating classes, also deprecate the constructor. When deprecating fields, also deprecate the constructor
     # parameter. That rule is useful for apps and especially for packages
@@ -829,7 +829,7 @@ linter:
 
     # Any sorting is better than no sorting
     # https://dart-lang.github.io/linter/lints/sort_pub_dependencies.html
-    - sort_pub_dependencies
+    # - sort_pub_dependencies
 
     # Default constructor comes first.
     # pedantic: disabled

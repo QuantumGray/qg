@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:qg_flutter_base/presentation/presentation.dart';
+import 'package:lottie/lottie.dart';
 
 class IndicatorScaffold extends HookWidget {
   final String? lottie;
@@ -43,7 +43,7 @@ class ExceptionIndicator extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    return IndicatorScaffold();
+    return const IndicatorScaffold();
   }
 }
 
@@ -58,7 +58,7 @@ class ExceptionRetryIndicator extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    return IndicatorScaffold();
+    return const IndicatorScaffold();
   }
 }
 
@@ -67,7 +67,7 @@ class EmptyIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return IndicatorScaffold();
+    return const IndicatorScaffold();
   }
 }
 
@@ -76,6 +76,6 @@ class LoadingIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return IndicatorScaffold();
+    return const IndicatorScaffold();
   }
 }

@@ -1,0 +1,6 @@
+# melos_managed_dependency_overrides: qg_analysis,qg_dart_base
+dependency_overrides:
+  qg_analysis:
+    path: ../qg_analysis
+  qg_dart_base:
+    path: ../qg_dart_base

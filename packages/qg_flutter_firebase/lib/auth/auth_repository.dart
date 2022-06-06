@@ -5,6 +5,8 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:qg_flutter_base/base/base.dart';
 import 'package:qg_flutter_base/base/request_response.dart';
+import 'package:qg_flutter_firebase/auth/base_auth_repository.dart';
+import 'package:rxdart/rxdart.dart';
 
 // appUserStream (userauthevents + userdatachangeevents)
 // authenticate (login + register) -> google, phone, email + password, email link
@@ -71,8 +73,8 @@ final Provider<FirebaseAuthRepository> pAuthRepository =
   ),
 );
 
-class FirebaseAuthRepository<U extends BaseFirebaseUser>
-    extends BaseRepository {
+class FirebaseAuthRepository<U extends BaseFirebaseUser> extends BaseRepository
+    implements BaseAuthRepository {
   final FirebaseUserConfig config;
 
   FirebaseAuthRepository(Reader read, this.config) : super(read);
@@ -85,7 +87,7 @@ class FirebaseAuthRepository<U extends BaseFirebaseUser>
     }
   }
 
-  Stream<U?> get userStream => authStateChanges.asyncMap(
+  Stream<U?> get userStream => authStateChanges().asyncMap(
         (firebaseUser) async {
           try {
             if (firebaseUser == null) {
@@ -103,7 +105,7 @@ class FirebaseAuthRepository<U extends BaseFirebaseUser>
                 throw Exception();
               },
             );
-          } on Exception catch (e) {
+          } on Exception {
             throw Exception();
           }
         },
@@ -114,20 +116,22 @@ class FirebaseAuthRepository<U extends BaseFirebaseUser>
 
   CollectionReference get users => config.userCollection;
 
-  Future<RequestResponse<U>> storeNewUser(U user) => RequestResponse.guard(
+  Future<RequestResponse<U, dynamic>> storeNewUser(U user) =>
+      RequestResponse.guard(
         () async {
           try {
             final ref = await users.add(config.toJson(user));
             final updatedUser = user.copyWithRef(ref.path);
             await ref.set(config.toJson(updatedUser));
             return updatedUser as U;
-          } on Exception catch (e) {
+          } on Exception {
             throw Exception();
           }
         },
       );
 
-  Future<RequestResponse<U?>> findUser(String uid) =>
+  // move to store repository
+  Future<RequestResponse<U?, dynamic>> findUser(String uid) =>
       RequestResponse.guard(() async {
         try {
           final snapshot = await users.where('uid', isEqualTo: uid).get();
@@ -147,12 +151,12 @@ class FirebaseAuthRepository<U extends BaseFirebaseUser>
       });
 
   @override
-  Stream<User?> get authStateChanges =>
+  Stream<User?> authStateChanges() =>
       _auth.authStateChanges().asyncMap((user) => user);
 
   @override
   // ignore: missing_return
-  Future<User?> signInWithGoogle() async {
+  Future<User> signInWithGoogle() async {
     try {
       final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
       final GoogleSignInAuthentication googleAuth =
@@ -163,11 +167,9 @@ class FirebaseAuthRepository<U extends BaseFirebaseUser>
       );
       final UserCredential userCredential =
           await _auth.signInWithCredential(credential);
-      return userCredential.user;
-    } on FirebaseAuthException catch (error) {
+      return userCredential.user!;
     } catch (e) {
-      // ignore: avoid_print
-      print(e);
+      rethrow;
     }
   }
 
@@ -271,6 +273,24 @@ class FirebaseAuthRepository<U extends BaseFirebaseUser>
       print(e);
     }
   }
+
+  @override
+  Future<User> signInWithApple() {
+    // TODO: implement signInWithApple
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<User?> verifyPhoneNumber({
+    required String phoneNumber,
+    VoidCallback? verificationCompleted,
+    VoidCallback? verificationFailed,
+    VoidCallback? codeSent,
+    VoidCallback? codeAutoRetrievalTimeout,
+  }) {
+    // TODO: implement verifyPhoneNumber
+    throw UnimplementedError();
+  }
 }
 
 final pUser = StateProvider(
@@ -296,8 +316,10 @@ final pUserStream = StreamProvider((ref) {
       [
         ref.read(pUserFirebaseStream.stream).shareValue(),
         if (user != null)
-          FirebaseFirestore.instance.doc(user.ref).snapshots().map((snapshot) =>
-              ref.read(pFirebaseConfig).fromJson(snapshot.data()!)),
+          FirebaseFirestore.instance.doc(user.ref).snapshots().map(
+                (snapshot) =>
+                    ref.read(pFirebaseConfig).fromJson(snapshot.data()!),
+              ),
       ],
     );
   });

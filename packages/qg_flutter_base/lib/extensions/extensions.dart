@@ -57,7 +57,7 @@ class Defaults extends StatelessWidget {
 abstract class BaseWidgets {
   const BaseWidgets();
   Widget loadingIndicator({Stream? progress});
-  Widget exceptionIndicator(Exception exception);
+  Widget errorIndicator(Object? error, StackTrace? trace);
   Widget emptyIndicator({String? forSubject});
   Widget nothingFoundIndicator({String? forSubject});
 }

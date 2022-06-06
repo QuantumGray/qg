@@ -1,7 +1,6 @@
 import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/foundation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:qg_flutter_base/base/utils/utils.dart';
 import 'package:qg_flutter_base/repositories/base_repository.dart';
 import 'package:qg_flutter_firebase/store/store_service.dart';
 
@@ -25,7 +24,7 @@ class ConfigRepository extends BaseRepository {
   Future<void> _fetchAndAcitvate() =>
       compute<void, void>((_) => config.fetchAndActivate(), null);
 
-  final RemoteConfig config = RemoteConfig.instance;
+  final config = FirebaseRemoteConfig.instance;
 
   StoreRepository get store => read(pStoreRepository);
 

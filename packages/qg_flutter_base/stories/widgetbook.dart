@@ -19,7 +19,7 @@ class HotReload extends StatelessWidget {
               useCases: [
                 WidgetbookUseCase(
                   name: 'Default',
-                  builder: (context) => Text("test"),
+                  builder: (context) => const Text("test"),
                 ),
               ],
             ),
@@ -33,7 +33,7 @@ class HotReload extends StatelessWidget {
                   useCases: [
                     WidgetbookUseCase(
                       name: 'Default',
-                      builder: (context) => Text(
+                      builder: (context) => const Text(
                         'The brown fox ...',
                       ),
                     ),

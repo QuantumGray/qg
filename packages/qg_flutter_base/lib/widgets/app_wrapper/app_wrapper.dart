@@ -8,13 +8,13 @@ import 'package:page_transition/page_transition.dart';
 import 'package:pixel_perfect/pixel_perfect.dart';
 import 'package:qg_flutter_base/base/theme/theme_notifier.dart';
 import 'package:qg_flutter_base/extensions/extensions.dart';
-import 'package:qg_flutter_base/presentation/widgets/animated_splash_screen.dart';
-import 'package:qg_flutter_base/presentation/widgets/app_wrapper/app_wrapper_config.dart';
-import 'package:qg_flutter_base/presentation/widgets/lifecycle_manager.dart';
-import 'package:qg_flutter_base/presentation/widgets/wrappers.dart';
+import 'package:qg_flutter_base/widgets/animated_splash_screen.dart';
+import 'package:qg_flutter_base/widgets/app_wrapper/app_wrapper_config.dart';
+import 'package:qg_flutter_base/widgets/lifecycle_manager.dart';
+import 'package:qg_flutter_base/widgets/spaces/spacing.dart';
+import 'package:qg_flutter_base/widgets/wrappers.dart';
 import 'package:qg_flutter_base/repositories/navigation/base_navigation_repository.dart';
 import 'package:qg_flutter_base/repositories/navigation/navigation_repository.dart';
-import 'package:spaces/spaces.dart';
 
 // provider watcher builder instead of direct provider
 // authStateChanged listenable (stream)
@@ -61,7 +61,7 @@ class _AppWrapperState extends ConsumerState<AppWrapper> {
         errorPageBuilder: routerConfig.errorPageBuilder ??
             (context, state) => MaterialPage(
                   child: Scaffold(
-                    body: ref.read(pWidgets).exceptionIndicator(state.error!),
+                    body: ref.read(pWidgets).errorIndicator(state.error, null),
                   ),
                 ),
         navigatorBuilder: (context, state, navigator) => Spacing(

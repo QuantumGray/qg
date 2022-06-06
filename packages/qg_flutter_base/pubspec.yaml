@@ -3,7 +3,7 @@ description: base package for Flutter code from QG
 version: 0.0.2
 
 environment:
-  sdk: ">=2.16.0 <3.0.0"
+  sdk: ">=2.17.0 <3.0.0"
   flutter: ">=2.10.2"
 
 dependencies:
@@ -71,9 +71,8 @@ dependencies:
   sliver_tools: '>=0.2.5'
   matrix4_transform: '>=2.0.1'
   stream_transform: '>=2.0.0'
-  spaces: '>=0.5.0'
   media_query_watcher: '>=0.0.1'
-  scaffold_messenger_proxy: '>=0.0.3'
+  # scaffold_messenger_proxy: '>=0.0.3'
   # flex_color_scheme: '>='
 
   # - ANIMATIONS
@@ -133,6 +132,7 @@ dependencies:
   flutter_wizard: '>=2.0.4'
   preload_page_view: '>=0.1.6'
   flutter_neumorphic: '>=3.2.0'
+  gap: ^2.0.0
 
   # - UI-PARSER/SERVER-DRIVEN-RENDERING
   # shark: '>=1.0.3' conflicts device info because 2.3.0
@@ -165,7 +165,7 @@ dependencies:
 
 dev_dependencies:
   # LINT
-  qg_analysis:
+  # qg_analysis:
 
   # TEST
   flutter_test:
@@ -175,15 +175,16 @@ dev_dependencies:
 
   # GEN
   build_runner: '>=2.1.7'
-  widgetbook_generator: '>=1.0.3'
+  freezed: 'any'
+  # widgetbook_generator: '>=1.0.3'
 
 dependency_overrides:
-  # qg_dart_base:
-  #   path: ../qg/packages/qg_dart_base
+  qg_dart_base:
+    path: ../qg/packages/qg_dart_base
 
   freezed_annotation: ^0.13.0-nullsafety.0
-  qr: '^3.0.0'
+  qr: '>=2.0.0'
 
 flutter:
   uses-material-design: true
-  generate: true
+  # generate: true # // -> otherwise melos generate throws -dart_tool/pubspec not found

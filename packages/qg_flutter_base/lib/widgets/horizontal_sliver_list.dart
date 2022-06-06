@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:qg_flutter_base/presentation/presentation.dart';
+import 'package:sliver_tools/sliver_tools.dart';
 
 class HorizontalSliverList extends StatelessWidget {
   final List<Widget> children;
@@ -20,12 +20,14 @@ class HorizontalSliverList extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         child: Padding(
           padding: listPadding,
-          child: Row(children: [
-            for (var i = 0; i < children.length; i++) ...[
-              children[i],
-              if (i != children.length - 1) addDivider(),
+          child: Row(
+            children: [
+              for (var i = 0; i < children.length; i++) ...[
+                children[i],
+                if (i != children.length - 1) addDivider(),
+              ],
             ],
-          ]),
+          ),
         ),
       ),
     );

@@ -4,7 +4,7 @@ version: 1.0.0+1
 publish_to: none
 
 environment:
-  sdk: ">=2.14.0 <3.0.0"
+  sdk: ">=2.17.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -12,7 +12,10 @@ dependencies:
 
 
   hooks_riverpod:
-  # qg_dart_base:
+  qg_dart_base:
+
+  rxdart:
+
   qg_flutter_base:
 
   # FIREBASE
@@ -53,7 +56,7 @@ dev_dependencies:
   build_runner: '>=2.1.7'
   json_serializable: '>=6.1.4'
   freezed: '>=1.1.1'
-  widgetbook_generator: '>=1.0.3'
+  # widgetbook_generator: '>=1.0.3'
 
 
 dependency_overrides:
@@ -62,4 +65,4 @@ dependency_overrides:
 
 flutter:
   uses-material-design: true
-  generate: true
+  # generate: true // -> otherwise melos generate throws -dart_tool/pubspec not found

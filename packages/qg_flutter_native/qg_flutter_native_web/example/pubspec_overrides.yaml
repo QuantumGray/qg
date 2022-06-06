@@ -1,0 +1,8 @@
+# melos_managed_dependency_overrides: qg_analysis,qg_flutter_native_platform_interface,qg_flutter_native_web
+dependency_overrides:
+  qg_analysis:
+    path: ../../../qg_analysis
+  qg_flutter_native_platform_interface:
+    path: ../../qg_flutter_native_platform_interface
+  qg_flutter_native_web:
+    path: ..

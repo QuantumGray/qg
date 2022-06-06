@@ -4,7 +4,7 @@ version: 1.0.0
 publish_to: none
 
 environment:
-  sdk: '>=2.16.1 <3.0.0'
+  sdk: ">=2.17.0 <3.0.0"
 
 dependencies:
 
@@ -47,7 +47,7 @@ dependencies:
   html: '>=0.15.0'
   markdown: '>=4.0.1'
   yaml: '>=3.1.0'
-  qr: '>=3.0.0'
+  qr: '>=2.0.0'
   # barcode: ^2.2.0
   # pdf: ^3.6.5
   image: '>=3.1.3'
@@ -107,7 +107,7 @@ dependencies:
 
 dev_dependencies:
   # LINT
-  # qg_analysis:
+  qg_analysis:
 
   # TEST
   test: '>=1.20.1'

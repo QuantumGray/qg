@@ -1,10 +1,10 @@
+// ignore_for_file: unused_local_variable
+
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:args/args.dart';
 import 'package:args/command_runner.dart';
 import 'package:path/path.dart';
-import 'package:yaml/yaml.dart';
 
 void main(List<String> args) async {
   final env = Platform.environment;
@@ -38,7 +38,9 @@ Future<void> writeLines(
       }
       stdout.writeln(line);
     }
-  } catch (e) {}
+  } catch (e) {
+    rethrow;
+  }
 }
 
 class CreateCommand extends Command {
@@ -107,7 +109,7 @@ class SyncCommand extends Command {
 }
 
 class ExportCommand extends Command {
-  ExportCommand() {}
+  ExportCommand();
 
   @override
   String get description => 'exports all files inside a directory';

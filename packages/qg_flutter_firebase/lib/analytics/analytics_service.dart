@@ -30,7 +30,7 @@ class AnalyticsRepository extends BaseRepository {
   }
 
   Future<void> removeUser() async {
-    await _analytics.setUserId(id: null);
+    await _analytics.setUserId();
   }
 
   Future<void> setUserProperty(String name, String value) async {
@@ -81,6 +81,11 @@ class AnalyticsRepository extends BaseRepository {
       ),
     );
     _timeEvents[event]?.reset();
+  }
+
+  void dispose() {
+    _analyticsEventSubscription.cancel();
+    _analyticsEventQueue.close();
   }
 }
 

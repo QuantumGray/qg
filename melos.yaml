@@ -8,6 +8,8 @@ packages:
 ignore:
 
 command:
+  bootstrap:
+    usePubspecOverrides: true
   version:
     linkToCommits: true
     branch: master

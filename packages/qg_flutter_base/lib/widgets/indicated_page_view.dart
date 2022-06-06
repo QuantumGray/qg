@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:qg_flutter_base/presentation/widgets/page_indicator.dart';
+import 'package:qg_flutter_base/widgets/page_indicator.dart';
 
 class IndicatedPageView extends HookWidget {
   final List<Widget> children;

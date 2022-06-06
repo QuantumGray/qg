@@ -22,8 +22,8 @@ Future<T?> showTransparentBottomSheet<T>({
         barrierColor: Colors.grey.withOpacity(.1),
         barrierDismissible: true,
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
-          var curve = Curves.ease;
-          var curveTween = CurveTween(curve: curve);
+          const curve = Curves.ease;
+          final curveTween = CurveTween(curve: curve);
           const begin = Offset(0.0, 1.0);
           const end = Offset.zero;
           final tween = Tween(begin: begin, end: end).chain(curveTween);

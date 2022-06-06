@@ -21,8 +21,8 @@ class LifecycleManager extends HookWidget with WidgetsBindingObserver {
   @override
   Widget build(BuildContext context) {
     useEffect(() {
-      WidgetsBinding.instance?.addObserver(this);
-      return () => WidgetsBinding.instance?.removeObserver(this);
+      WidgetsBinding.instance.addObserver(this);
+      return () => WidgetsBinding.instance.removeObserver(this);
     });
     return child;
   }

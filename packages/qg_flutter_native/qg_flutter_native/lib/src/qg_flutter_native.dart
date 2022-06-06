@@ -1,3 +1,5 @@
+// ignore_for_file: unused_field
+
 import 'package:qg_flutter_native_platform_interface/qg_flutter_native_platform_interface.dart';
 
 class QgFlutterNative {

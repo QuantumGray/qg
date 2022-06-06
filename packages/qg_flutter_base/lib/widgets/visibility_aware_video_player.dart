@@ -35,7 +35,7 @@ class _VisbilityAwareVideoPlayerState extends State<VisbilityAwareVideoPlayer> {
   @override
   Widget build(BuildContext context) {
     return VisibilityDetector(
-      key: Key(''),
+      key: const Key(''),
       onVisibilityChanged: (visibility) {
         if (visibility.visibleFraction > widget.visibleFractionThreshold) {
           controller.play();
@@ -48,7 +48,7 @@ class _VisbilityAwareVideoPlayerState extends State<VisbilityAwareVideoPlayer> {
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.active ||
               snapshot.connectionState == ConnectionState.waiting) {
-            return CircularProgressIndicator();
+            return const CircularProgressIndicator();
           }
           return AspectRatio(
             aspectRatio: controller.value.aspectRatio,

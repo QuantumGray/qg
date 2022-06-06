@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:qg_flutter_base/base/theme/base_theme.dart';
 import 'package:qg_flutter_base/extensions/extensions.dart';
-import 'package:qg_flutter_base/presentation/presentation.dart';
 
 final pThemeNotifier = ChangeNotifierProvider<ThemeNotifier>(
   (ref) => ThemeNotifier(),

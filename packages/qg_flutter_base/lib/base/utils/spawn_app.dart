@@ -23,6 +23,5 @@ Future<Widget> spawnApp(Uri _) async {
   port.close();
   isolate.kill();
 
-  print(response.toString());
   return response;
 }

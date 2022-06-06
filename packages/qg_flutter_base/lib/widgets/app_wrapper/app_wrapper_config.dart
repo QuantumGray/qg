@@ -4,8 +4,8 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:qg_flutter_base/base/theme/base_theme.dart';
 import 'package:qg_flutter_base/extensions/extensions.dart';
-import 'package:qg_flutter_base/presentation/widgets/wrappers.dart';
-import 'package:spaces/spaces.dart';
+import 'package:qg_flutter_base/widgets/spaces/spacing_data.dart';
+import 'package:qg_flutter_base/widgets/wrappers.dart';
 
 class AppWrapperConfig {
   final AppConfig appConfig;

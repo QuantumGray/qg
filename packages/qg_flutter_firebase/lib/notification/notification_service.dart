@@ -131,6 +131,12 @@ class NotificationRepository extends BaseRepository {
       'platform': Platform.operatingSystem,
     });
   }
+
+  void dispose() {
+    _foregroundMessageSubscription.cancel();
+    _messageOpenedAppSubscription.cancel();
+    _snackBarSubject.close();
+  }
 }
 
 Future<void> onBackgroundMessage(RemoteMessage _message) async {}

@@ -59,10 +59,9 @@ class _SafeConnectivityState extends ConsumerState<SafeConnectivity>
     final snapshot = useStream(widget.connectivityListenable);
 
     if (snapshot.hasError) {
-      return widgets.exceptionIndicator(
-        Exception(
-          snapshot.error,
-        ),
+      return widgets.errorIndicator(
+        snapshot.error,
+        null,
       );
     }
     if (!snapshot.hasData) {
@@ -70,10 +69,11 @@ class _SafeConnectivityState extends ConsumerState<SafeConnectivity>
     }
     final result = snapshot.data;
     if (result == ConnectivityResult.none) {
-      return widgets.exceptionIndicator(
+      return widgets.errorIndicator(
         Exception(
           'No internet connection',
         ),
+        null,
       );
     }
     return widget.builder(context);

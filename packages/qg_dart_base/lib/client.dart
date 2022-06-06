@@ -12,7 +12,6 @@ class HttpClient {
       ..options.connectTimeout = 5000
       ..options.baseUrl = baseUrl
       ..options.headers = {'': "dio", "api-version": "1.0.0"};
-    final tokenDio = Dio();
     client.interceptors
       ..add(
         LoggerInterceptor(logger: Logger()),
@@ -27,7 +26,7 @@ class HttpClient {
       ..add(
         QueuedInterceptorsWrapper(
           onRequest: (options, handler) {
-            final dynamic csrfToken = "";
+            const dynamic csrfToken = "";
             // print(
             //     'send request：path:${options.path}，baseURL:${options.baseUrl}');
             if (csrfToken == null) {
@@ -63,8 +62,8 @@ class HttpClient {
     //   ),
     // );
   }
+
   final client = Dio();
-  final _internalDio = Dio();
 
   Future<List<String>> uploadFiles(
     List<File> files, {

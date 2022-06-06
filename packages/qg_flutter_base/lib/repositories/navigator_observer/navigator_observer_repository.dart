@@ -15,10 +15,12 @@ class NavigatorObserverRepository extends BaseRepository
   final BehaviorSubject<RouteTransitionEvent> _routeTransitionSubject =
       BehaviorSubject<RouteTransitionEvent>();
 
+  @override
   void add(RouteTransitionEvent event) {
     _routeTransitionSubject.sink.add(event);
   }
 
+  @override
   RouteSettings? get currentRoute =>
       _routeTransitionSubject.value.map<RouteSettings?>(
         push: (push) => push.route.settings,
@@ -26,6 +28,7 @@ class NavigatorObserverRepository extends BaseRepository
         pop: (pop) => pop.route.settings,
       );
 
+  @override
   ValueStream<RouteTransitionEvent> get routeTransitionStream =>
       _routeTransitionSubject.stream;
 }

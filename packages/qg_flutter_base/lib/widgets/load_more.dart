@@ -3,10 +3,11 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:qg_flutter_base/base/request_response.dart';
-import 'package:qg_flutter_base/presentation/widgets/indicators.dart';
+import 'package:qg_flutter_base/widgets/indicators.dart';
 
 typedef LoadMoreCallback = Future<RequestResponse> Function(
-    BuildContext context);
+  BuildContext context,
+);
 
 class LoadMore extends StatefulWidget {
   final Widget child;
@@ -18,11 +19,13 @@ class LoadMore extends StatefulWidget {
     required this.child,
     required this.onLoadMore,
     required this.isFinish,
-  })  : assert(child is ListView ||
-            child is SliverList ||
-            child is SliverGrid ||
-            child is GridView ||
-            child is SliverFixedExtentList),
+  })  : assert(
+          child is ListView ||
+              child is SliverList ||
+              child is SliverGrid ||
+              child is GridView ||
+              child is SliverFixedExtentList,
+        ),
         super(key: key);
 
   @override
@@ -242,7 +245,7 @@ class _LoadMoreWidgetState extends State<LoadMoreWidget> {
 
   Future<void> _loadMore() async {
     final RequestResponse result = await widget.onLoadMore(context);
-    WidgetsBinding.instance?.addPostFrameCallback(
+    WidgetsBinding.instance.addPostFrameCallback(
       (_) {
         if (mounted) setState(() => _response = result);
       },
@@ -348,10 +351,11 @@ class SliverTwoChildBuilderDelegate extends SliverChildBuilderDelegate {
               return itemBuilder(context, index ~/ 2);
             }
 
-            return Consumer(builder: (context, watch, child) {
-              final Widget? secondItem =
-                  secondItemBuilder(context, index ~/ 2, watch);
-              if (secondItem != null) {
+            return Consumer(
+              builder: (context, watch, child) {
+                if (!index.isEven) {
+                  return separatorBuilder(context, index ~/ 2);
+                }
                 return Padding(
                   padding: EdgeInsets.symmetric(
                     vertical: scrollDirection == Axis.vertical ? 8 : 0,
@@ -359,12 +363,12 @@ class SliverTwoChildBuilderDelegate extends SliverChildBuilderDelegate {
                         ? 8 // constants.smallpadding
                         : 0,
                   ),
-                  child: secondItem,
+                  child: secondItemBuilder(context, index ~/ 2, watch),
                 );
-              }
 
-              return separatorBuilder(context, index ~/ 2);
-            });
+                // return separatorBuilder(context, index ~/ 2);
+              },
+            );
           },
           semanticIndexCallback: (widget, localIndex) {
             if (localIndex.isEven) {

@@ -23,7 +23,7 @@ extension ListWidget<T> on List<T> {
         ).toList()
           ..removeLast();
 
-        return list as List<T>;
+        return list;
       }();
 }
 
