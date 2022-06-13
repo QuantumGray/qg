@@ -98,8 +98,8 @@ dependencies:
   plural_selectable: '>=1.0.1'
   circular_clip_route: '>=0.2.0+1'
   flutter_bounceable: '>=1.0.2'
-  parallax_animation: '>=0.0.3'
-  sliding_number: '>=0.0.4'
+  # parallax_animation: '>=0.0.3'
+  # sliding_number: '>=0.0.4'
   animated_tree_view: '>=0.1.1'
   expandable_sliver_list: '>=4.1.0'
   glopos: '>=0.1.1'
@@ -139,7 +139,7 @@ dependencies:
 
   # - MISC
   google_fonts: '>=2.3.1'
-  macos_ui: '>=0.10.0'
+  # macos_ui: '>=0.10.0'
   # fluttertoast: '>=' only mobile + web
   modals: '>=0.0.3'
   visibility_detector: '>=0.2.2'
