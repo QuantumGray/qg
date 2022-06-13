@@ -40,7 +40,6 @@ export 'package:go_router/go_router.dart';
 export 'package:google_fonts/google_fonts.dart';
 export 'package:hooks_riverpod/hooks_riverpod.dart';
 export 'package:lottie/lottie.dart';
-export 'package:macos_ui/macos_ui.dart';
 export 'package:motion_toast/motion_toast.dart';
 export 'package:parallax_animation/parallax_animation.dart';
 export 'package:percent_indicator/percent_indicator.dart';
