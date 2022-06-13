@@ -1,5 +1,7 @@
-# melos_managed_dependency_overrides: qg_analysis,qg_dart_base,qg_flutter_base
+# melos_managed_dependency_overrides: qg_analysis,qg_dart_base,qg_flutter_base,freezed_annotation,analyzer
 dependency_overrides:
+  analyzer: ^3.0.0
+  freezed_annotation: ^0.13.0-nullsafety.0
   qg_analysis:
     path: ../qg_analysis
   qg_dart_base:

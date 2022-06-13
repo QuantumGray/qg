@@ -12,7 +12,7 @@ command:
     usePubspecOverrides: true
   version:
     linkToCommits: true
-    branch: master
+    branch: main
     workspaceChangelog: true
     message: |
       chore: cut package releases 🎉
