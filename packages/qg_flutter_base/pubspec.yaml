@@ -144,7 +144,7 @@ dependencies:
   modals: '>=0.0.3'
   visibility_detector: '>=0.2.2'
   pixel_perfect: '>=1.1.1'
-  device_preview: '>=1.0.0'
+  # device_preview: '>=1.0.0'
   flutter_auto_form: '>=0.4.3'
   flutter_cube: '>=0.1.1'
   flutter_stage: '>=0.0.1'

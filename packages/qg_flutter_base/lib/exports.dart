@@ -26,7 +26,7 @@ export 'package:flutter_advanced_avatar/flutter_advanced_avatar.dart';
 export 'package:flutter_chat_types/flutter_chat_types.dart'
     hide FileMessage, ImageMessage, Message, TextMessage;
 export 'package:flutter_chat_ui/flutter_chat_ui.dart';
-export 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
+// export 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 export 'package:flutter_portal/flutter_portal.dart';
 //   # - WIDGETS
 export 'package:flutter_slidable/flutter_slidable.dart';
@@ -41,7 +41,7 @@ export 'package:google_fonts/google_fonts.dart';
 export 'package:hooks_riverpod/hooks_riverpod.dart';
 export 'package:lottie/lottie.dart';
 export 'package:motion_toast/motion_toast.dart';
-export 'package:parallax_animation/parallax_animation.dart';
+// export 'package:parallax_animation/parallax_animation.dart';
 export 'package:percent_indicator/percent_indicator.dart';
 export 'package:pinput/pinput.dart';
 export 'package:pixel_perfect/pixel_perfect.dart';
@@ -49,7 +49,7 @@ export 'package:plural_selectable/plural_selectable.dart' hide Selectable;
 export 'package:reorderables/reorderables.dart';
 export 'package:responsive_framework/responsive_framework.dart';
 //   # - ANIMATIONS
-export 'package:rive/rive.dart';
+// export 'package:rive/rive.dart';
 export 'package:shimmer/shimmer.dart';
 export 'package:simple_animations/simple_animations.dart';
 export 'package:sliding_number/sliding_number.dart';
