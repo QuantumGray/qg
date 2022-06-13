@@ -7,6 +7,10 @@ class HotReload extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Widgetbook(
+      themes: const [
+        // ThemeData.dark(),
+        // ThemeData.light(),
+      ],
       appInfo: AppInfo(
         name: 'qg_flutter_base',
       ),
@@ -14,7 +18,7 @@ class HotReload extends StatelessWidget {
         WidgetbookCategory(
           name: 'widgets',
           widgets: [
-            WidgetbookWidget(
+            WidgetbookComponent(
               name: '$Text',
               useCases: [
                 WidgetbookUseCase(
@@ -28,7 +32,7 @@ class HotReload extends StatelessWidget {
             WidgetbookFolder(
               name: 'Texts',
               widgets: [
-                WidgetbookWidget(
+                WidgetbookComponent(
                   name: 'Normal Text',
                   useCases: [
                     WidgetbookUseCase(
@@ -44,8 +48,6 @@ class HotReload extends StatelessWidget {
           ],
         ),
       ],
-      darkTheme: ThemeData.dark(),
-      lightTheme: ThemeData.light(),
       devices: [
         Apple.iPhone11,
         Apple.iPhone12,
